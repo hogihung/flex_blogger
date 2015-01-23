@@ -1,28 +1,49 @@
 == README
+* Ruby version: 2.1.5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails version: 4.1.7
 
-Things you may want to cover:
+* Database:  Postgres 
 
-* Ruby version
+* Test suite:  RSpec
 
-* System dependencies
+Frontend Framework - Bourbon, Neat, Bitters and Refill
+Devise
+Simple Form (form generator)
+Haml
 
-* Configuration
+Name:  Flex_Blogger
 
-* Database creation
+Tables
+Categories
+  id
+  description (40)
+  created_by (current_user)
+  create_date
+  update_date
 
-* Database initialization
+Posts
+  id
+  title (120)
+  body
+  category.id
+  user.id
+  status
+  create_date
+  update_date
 
-* How to run the test suite
+Users
+   id
+   name
+   email
+   password
+ 
+Static Pages
+  About
+  Contact
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Future Features
+  Tags
+  Contributors
+  Image Upload
