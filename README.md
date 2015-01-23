@@ -7,14 +7,13 @@
 
 * Test suite:  RSpec
 
-Frontend Framework - Bourbon, Neat, Bitters and Refill
-Devise
-Simple Form (form generator)
-Haml
+Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
+Authentication:  Devise<br>
+Form Generator: Simple Form<br>
+Templating Language: Haml<br>
 
-Name:  Flex_Blogger
-
-Tables
+Database Tables:<br>
+```
 Categories
   id
   description (40)
@@ -41,7 +40,7 @@ Users
 Static Pages
   About
   Contact
-
+```
 
 Future Features
   Tags
