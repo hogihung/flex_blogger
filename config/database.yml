@@ -28,7 +28,7 @@ production:
 ############# FUTURE USE WHEN WE USE POSTGRES ###########
 # This file defines our database connectivity for the given environments.
 # default: &default
-#   adapter: postgres
+#   adapter: postgresql
 #   encoding: utf8
 #   pool: 10
 #   timeout: 5000
