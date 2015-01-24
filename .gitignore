@@ -19,4 +19,4 @@
 .env
 
 # Ignore files related to coverage
-/coverage/*
+/coverage

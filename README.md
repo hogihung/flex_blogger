@@ -1,10 +1,8 @@
-== README
+###Flex Blogger 
+
 * Ruby version: 2.1.5
-
 * Rails version: 4.1.7
-
 * Database:  Postgres 
-
 * Test suite:  RSpec
 
 Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
@@ -42,7 +40,7 @@ Static Pages
   Contact
 ```
 
-Future Features
-  Tags
-  Contributors
-  Image Upload
+**Future Features<br>
+  *Tags
+  *Contributors
+  *Image Upload
