@@ -33,6 +33,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bourbon (3.2.4)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -216,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   better_errors
+  bourbon
   byebug
   capybara
   coffee-rails (~> 4.0.0)
