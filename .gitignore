@@ -18,3 +18,5 @@
 # Ignore configuration file(s)
 .env
 
+# Ignore files related to coverage
+/coverage/*
