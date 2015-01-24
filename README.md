@@ -34,13 +34,13 @@ Users
    name
    email
    password
- 
-Static Pages
-  About
-  Contact
 ```
+<br> 
+**Static Pages**
+-  About
+-  Contact
 
-**Future Features<br>
-  *Tags
-  *Contributors
-  *Image Upload
+**Future Features**
+* Tags
+* Contributors
+* Image Upload
