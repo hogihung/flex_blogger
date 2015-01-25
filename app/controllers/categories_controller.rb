@@ -17,18 +17,18 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    flash[:notice] = 'Successfully created category.' if @category.save
+    flash[:success] = 'Successfully created category.' if @category.save
     respond_with @category, location: categories_path
   end
 
   def update
-    flash[:notice] = 'Successfully updated category.' if @category.update(category_params)
+    flash[:success] = 'Successfully updated category.' if @category.update(category_params)
     respond_with @category, location: categories_path
   end
 
   def destroy
     @category.destroy
-    redirect_to categories_path, notice: 'Successfully deleted category.'
+    redirect_to categories_path, alert: 'Successfully deleted category.'
   end
 
   private
