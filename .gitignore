@@ -21,3 +21,6 @@
 # Ignore files related to coverage
 /coverage
 .DS_Store
+
+# Ignore public/assets
+/public/assets/*
