@@ -1,6 +1,3 @@
-// body{
-//   @include outer-container;
-// }
 body {
   @include outer-container
 }
@@ -11,9 +8,4 @@ section {
 
 #category-form {
   @include span-columns(6);
-  @include clearfix;
-}
-
-#cat-index{
-  @include clearfix;
 }
