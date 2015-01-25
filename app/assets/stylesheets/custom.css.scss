@@ -1,0 +1,11 @@
+body {
+  @include outer-container
+}
+
+section {
+  @include span-columns(12);
+}
+
+#category-form {
+  @include span-columns(6);
+}

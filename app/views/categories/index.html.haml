@@ -1,0 +1,19 @@
+%h1 Listing categories
+
+%table.tables
+  %thead
+    %tr
+      %th Description
+      %th
+      %th
+
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.description
+        %td= link_to 'Edit', edit_category_path(category)
+        %td= link_to 'Delete', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Category', new_category_path

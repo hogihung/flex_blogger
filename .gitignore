@@ -20,3 +20,4 @@
 
 # Ignore files related to coverage
 /coverage
+.DS_Store
