@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-body "MyText"
-status "MyString"
+    title 'Title'
+    body 'Body'
   end
 
 end
