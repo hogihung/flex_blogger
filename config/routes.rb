@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 	resources :contact, :only => [:index]
   resources :about, :only => [:index]
 
-  root to: 'categories#new'
+  root to: 'home#index'
 end

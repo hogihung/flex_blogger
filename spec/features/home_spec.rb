@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 feature 'Viewing Home Page' do
-  scenario 'a visitor clicks on the about link' do
+  scenario 'a visitor clicks on the blog link' do
    	visit root_path
 
-		click_link 'Home'
+		click_link 'Blog'
 		
 		expect(page).to have_content 'The Home Page'
 	end
