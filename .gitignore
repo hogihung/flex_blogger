@@ -24,3 +24,6 @@
 
 # Ignore public/assets
 /public/assets/*
+
+# Ignore sensitive files
+/config/app_environment_variables.rb

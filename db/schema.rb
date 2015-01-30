@@ -11,13 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130005938) do
+ActiveRecord::Schema.define(version: 20150129211140) do
 
   create_table "categories", force: true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ckeditor_assets", force: true do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -42,17 +58,5 @@ ActiveRecord::Schema.define(version: 20150130005938) do
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
-
-  create_table "users", force: true do |t|
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "email",                          null: false
-    t.string   "encrypted_password", limit: 128, null: false
-    t.string   "confirmation_token", limit: 128
-    t.string   "remember_token",     limit: 128, null: false
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end
