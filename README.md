@@ -1,16 +1,26 @@
-###Flex Blogger 
+#Flex Blogger
 
 * Ruby version: 2.1.5
 * Rails version: 4.1.7
-* Database:  Postgres 
+* Database:  Postgres
 * Test suite:  RSpec
 
-Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
-Authentication:  Devise<br>
-Form Generator: Simple Form<br>
-Templating Language: Haml<br>
+##Getting Started
 
-Database Tables:<br>
+Create a file in your `config` folder named `app_environment_variables.rb` and add the following:
+```
+ENV['S3_BUCKET']             = 'foo'
+ENV['AWS_ACCESS_KEY_ID']     = 'bar'
+ENV['AWS_SECRET_ACCESS_KEY'] = 'baz'
+```
+This will allow you to upload images to Amazon S3 through the WYSIWYG editor.
+
+#Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
+#Authentication: Devise
+#Form Generator: Simple Form
+#Templating Language: Haml
+
+#Database Tables:
 ```
 Categories
   id
@@ -35,7 +45,7 @@ Users
    email
    password
 ```
-<br> 
+<br>
 **Static Pages**
 -  About
 -  Contact
@@ -43,4 +53,3 @@ Users
 **Future Features**
 * Tags
 * Contributors
-* Image Upload
