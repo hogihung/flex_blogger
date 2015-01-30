@@ -1,17 +1,17 @@
 %li.nav-link
-  %a{:href => root_path } Blog
+  %a{href: root_path } Blog
 %li.nav-link
-  %a{:href => home_index_path } Home
+  %a{href: home_index_path } Home
 %li.nav-link
-  %a{:href => about_index_path } About Us
+  %a{href: about_index_path } About Us
 %li.nav-link
-  %a{:href => contact_index_path } Contact
+  %a{href: contact_index_path } Contact
 %li.nav-link.more
-  %a{:href => "javascript:void(0)"} Admin
+  %a{href: '#'} Admin
   %ul.submenu
     %li
-      %a{:href => "javascript:void(0)"} Blogs Entries
+      %a{href: posts_path } Posts
     %li
-      %a{:href => "javascript:void(0)"} Categories
+      %a{href: '#'} Categories
     %li
-      %a{:href => "javascript:void(0)"} Contributors
+      %a{href: '#'} Contributors
