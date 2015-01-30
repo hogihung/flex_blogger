@@ -30,6 +30,7 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     awesome_print (1.6.1)
+    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -58,6 +59,10 @@ GEM
     ckeditor (4.1.1)
       cocaine
       orm_adapter (~> 0.5.0)
+    clearance (1.8.0)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cliver (0.3.2)
@@ -79,6 +84,8 @@ GEM
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
+    email_validator (1.5.0)
+      activemodel
     erubis (2.7.0)
     excon (0.43.0)
     execjs (2.2.2)
@@ -366,6 +373,7 @@ DEPENDENCIES
   capybara
   carrierwave
   ckeditor
+  clearance
   coffee-rails (~> 4.0.0)
   database_cleaner
   dotenv-rails

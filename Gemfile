@@ -6,6 +6,7 @@ gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'carrierwave'  # File Uploads
 gem 'ckeditor'     # WYSIWYG
+gem 'clearance'
 gem 'dotenv-rails'
 gem 'friendly_id'
 gem 'fog'          # Amazon S3
