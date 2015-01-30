@@ -19,7 +19,7 @@ ENV['AWS_SECRET_ACCESS_KEY'] = 'baz'
 ```
 This will allow you to upload images to Amazon S3 through the WYSIWYG editor.
 
-#Database Tables:
+##Database Tables:
 ```
 Categories
   id
@@ -52,3 +52,8 @@ Users
 **Future Features**
 * Tags
 * Contributors
+* Add Footer (DL)
+* Fix Failing Category test (DL)
+* Add Test for User Sign In/Out (DL)
+* Add Status Dropdown to Posts (John)
+* Add Categories to Posts (Josh)
