@@ -19,6 +19,13 @@ ENV['AWS_SECRET_ACCESS_KEY'] = 'baz'
 ```
 This will allow you to upload images to Amazon S3 through the WYSIWYG editor.
 
+## Prime Development Data
+To ensure we have consistent data when we are testing, use the following command to reset your dev database:
+
+```
+rake dev:prime
+```
+
 ##Database Tables:
 ```
 Categories
