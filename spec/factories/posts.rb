@@ -5,7 +5,7 @@ FactoryGirl.define do
     status "published"
 
     factory :blog do
-      title "Passwordless login with ssh"
+      title "The Booming field of Programming"
       body  "Web development, and programming in general, is a booming field.
              However not enough college bound young adults are choosing to 
              persue this awesome field of study."
