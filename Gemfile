@@ -2,41 +2,45 @@ source 'https://rubygems.org'
 
 ruby '2.1.5'
 
-gem 'dotenv-rails'
-gem 'rails', '4.1.7'
-gem 'sqlite3'
-gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
+gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'simple_form'
+gem 'carrierwave'  # File Uploads
+gem 'ckeditor'     # WYSIWYG
+gem 'dotenv-rails'
+gem 'friendly_id'
+gem 'fog'          # Amazon S3
 gem 'haml'
 gem 'haml-rails'
-gem 'bourbon'
+gem 'jquery-rails'
+gem 'mini_magick'  # Image Processing
 gem 'neat'
+gem 'pg'
+gem 'rails', '4.1.7'
+gem 'sass-rails', '~> 4.0.3'
+gem 'simple_form'
+gem 'sqlite3'
+gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate'
-gem 'friendly_id'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'turbolinks'
 
 group :development do
-  gem 'spring'
   gem 'better_errors'
   gem 'hirb'
+  gem 'spring'
 end
 
 gem 'rails_12factor', group: :production
 
 group :development, :test do
+  gem 'awesome_print'
+  gem 'byebug'
   gem 'rspec-rails', ">=3.0.2"
   gem 'pry-rails'
-  gem 'byebug'
   gem 'quiet_assets'
-  gem 'awesome_print'
   gem 'guard'        # Automatically run tests
   gem 'guard-rspec'  # Auto-run Rspec tests
 
