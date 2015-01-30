@@ -15,6 +15,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bourbon'
 gem 'neat'
+gem 'will_paginate'
+gem 'friendly_id'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -35,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'awesome_print'
+  gem 'guard'        # Automatically run tests
+  gem 'guard-rspec'  # Auto-run Rspec tests
 
   gem 'spring-commands-rspec'
   gem 'simplecov'
