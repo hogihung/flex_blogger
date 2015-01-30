@@ -29,6 +29,7 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     awesome_print (1.6.1)
+    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -47,6 +48,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    clearance (1.8.0)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -64,6 +69,8 @@ GEM
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
+    email_validator (1.5.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -225,6 +232,7 @@ DEPENDENCIES
   bourbon
   byebug
   capybara
+  clearance
   coffee-rails (~> 4.0.0)
   database_cleaner
   dotenv-rails
