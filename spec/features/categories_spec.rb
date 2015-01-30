@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 feature 'Managing Categories' do
+	scenario 'Visit Category page' do
+		visit root_path
+
+		click_link 'Admin'
+		click_link 'Categories'
+
+		expect(page).to have_content 'Listing categories'
+	end
+	
   scenario 'Create a new category' do
     visit new_category_path
 
