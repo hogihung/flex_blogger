@@ -1,0 +1,9 @@
+%h1
+  Editing Post
+  %small= @post.title
+
+= render 'form'
+
+= link_to 'Show Post', @post
+\|
+= link_to 'Cancel', posts_path
