@@ -4,12 +4,15 @@
   %a{href: about_index_path } About Us
 %li.nav-link
   %a{href: contact_index_path } Contact
-%li.nav-link.more
-  %a{href: "#" } Admin
-  %ul.submenu
-    %li
-      %a{href: posts_path } Posts
-    %li
-      %a{href: categories_path } Categories
-    %li
-      %a{href: '#'} Contributors
+- if signed_in?
+  %li.nav-link.more
+    %a{:href => "#"} Admin
+    %ul.submenu
+      %li
+        %a{:href => post_path} Blogs Entries
+      %li
+        %a{:href => categories_path} Categories
+      %li
+        %a{:href => "#"} Contributors
+      %li
+        %a{:href => log_out_path} Sign Out

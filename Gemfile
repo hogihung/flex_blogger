@@ -17,6 +17,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'will_paginate'
 gem 'friendly_id'
+gem 'clearance'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
