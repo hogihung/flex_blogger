@@ -10,7 +10,9 @@ class Post < ActiveRecord::Base
   validates :body, presence: true
   validates :slug, presence: true
 
-  # validates :status, presence: true, inclusion: { in: :acceptable_status }
+  validates :status, presence: true, inclusion: { in: :acceptable_status }
+
+  STATUS_CHOICES = %w(draft published archived retired)
 
   private
 
