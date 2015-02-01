@@ -6,6 +6,7 @@ feature 'Managing Posts' do
 
     fill_in 'post_title', with: 'Title'
     fill_in 'post_body',  with: 'Body'
+    select 'draft', from: 'post_status'
     click_button 'Create Post'
 
     expect(page).to have_content 'Successfully created'
