@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
 
   validates :status, presence: true, inclusion: { in: :acceptable_status }
 
+  scope :recent, -> { order(created_at: :desc).first(3) }
+
   STATUS_CHOICES = %w(draft published archived retired)
 
   private

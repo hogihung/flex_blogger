@@ -5,7 +5,7 @@ feature 'Viewing Home Page' do
    	visit root_path
 
 		click_link 'Blog'
-		
-		expect(page).to have_content 'The Home Page'
+
+		expect(page).to have_content 'My Cool Blog Name Here'
 	end
 end
