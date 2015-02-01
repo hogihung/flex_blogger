@@ -1,5 +1,7 @@
 #Flex Blogger
 
+**Note: This application is currently in the early development stage.  We will be making many changes.  Please keep that in mind if you clone.**
+
 * Ruby version: 2.1.5
 * Rails version: 4.1.7
 * Database:  Postgres
