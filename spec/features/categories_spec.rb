@@ -1,9 +1,11 @@
 require 'rails_helper'
+require 'support/sign_in_helper'
 
 feature 'Managing Categories' do
 	scenario 'Visit Category page' do
-		visit root_path
-
+		@user = FactoryGirl.create(:user)
+		sign_in(@user)
+		
 		click_link 'Admin'
 		click_link 'Categories'
 
