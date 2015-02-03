@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe Post, 'validations' do
+describe Post, "validations" do
   let :status_array do
     %w(draft published archived retired)
   end
