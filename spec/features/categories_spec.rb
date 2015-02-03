@@ -1,15 +1,15 @@
 require "rails_helper"
 
 feature "Managing Categories" do
-	scenario "Visit Category page" do
-		@user = FactoryGirl.create(:user)
-		sign_in(@user)
+  scenario "Visit Category page" do
+    @user = FactoryGirl.create(:user)
+    sign_in(@user)
 
-		click_link "Admin"
-		click_link "Categories"
+    click_link "Admin"
+    click_link "Categories"
 
-		expect(page).to have_content "Listing categories"
-	end
+    expect(page).to have_content "Listing categories"
+  end
 
   scenario "Create a new category" do
     visit new_category_path
