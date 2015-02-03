@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  get "log_out", to: "clearance/sessions#destroy" # this is a work-around for sign_out no route issue
+  # this is a work-around for sign_out no route issue
+  get "log_out", to: "clearance/sessions#destroy"
 end
