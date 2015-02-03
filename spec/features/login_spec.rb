@@ -19,4 +19,3 @@ feature "User logs into site" do
 		expect(page).to have_link "Sign In"
 	end
 end
-
