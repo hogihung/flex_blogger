@@ -28,6 +28,13 @@ To ensure we have consistent data when we are testing, use the following command
 rake dev:prime
 ```
 
+## Misc. Configuration Settings
+Edit the config/initializers/clearance.rb file and update the following with your information:
+
+```
+  config.mailer_sender = "reply@example.com"
+```
+
 ##Database Tables:
 ```
 Categories

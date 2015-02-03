@@ -38,18 +38,18 @@ production:
 # Do not set this db to the same as development or production.
 # test:
 #   <<: *default
-#   database: <%= ENV['DB_TEST'] %>
-#   username: <%= ENV['DB_USERNAME_TEST'] %>
-#   password: <%= ENV['DB_PASSWORD_TEST'] %>
+#   database: <%= ENV["DB_TEST"] %>
+#   username: <%= ENV["DB_USERNAME_TEST"] %>
+#   password: <%= ENV["DB_PASSWORD_TEST"] %>
 
 # development:
 #   <<: *default
-#   database: <%= ENV['DB_DEV'] %>
-#   username: <%= ENV['DB_USERNAME_DEV'] %>
-#   password: <%= ENV['DB_PASSWORD_DEV'] %>
+#   database: <%= ENV["DB_DEV"] %>
+#   username: <%= ENV["DB_USERNAME_DEV"] %>
+#   password: <%= ENV["DB_PASSWORD_DEV"] %>
 
 # production:
 #   <<: *default
-#   database: <%= ENV['DB_PROD'] %>
-#   username: <%= ENV['DB_USERNAME_PROD'] %>
-#   password: <%= ENV['DB_PASSWORD_PROD'] %>
+#   database: <%= ENV["DB_PROD"] %>
+#   username: <%= ENV["DB_USERNAME_PROD"] %>
+#   password: <%= ENV["DB_PASSWORD_PROD"] %>

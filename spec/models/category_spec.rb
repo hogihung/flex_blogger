@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe Category, 'validations' do
+describe Category, "validations" do
   it { should respond_to(:description) }
   it { should respond_to(:description=) }
 

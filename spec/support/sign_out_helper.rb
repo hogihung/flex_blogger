@@ -1,7 +1,7 @@
 module SignOutHelpers
   def sign_out
-    click_link 'Admin'
-    click_link 'Sign Out'
+    click_link "Admin"
+    click_link "Sign Out"
   end
 end
 
