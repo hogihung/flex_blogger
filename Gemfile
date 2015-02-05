@@ -40,6 +40,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'byebug'
   gem 'rspec-rails', ">=3.0.2"
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'guard'        # Automatically run tests
@@ -52,7 +53,7 @@ end
 group :test do
   gem 'capybara'
   gem 'poltergeist'
-  gem 'factory_girl_rails', '~> 4.0'
+  #gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
   gem 'faker'
   gem 'shoulda-matchers'
