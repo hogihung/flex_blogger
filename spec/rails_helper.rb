@@ -32,8 +32,6 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_base_class_for_anonymous_controllers = false
 
-  #config.include FactoryGirl::Syntax::Methods
-
   config.run_all_when_everything_filtered = true
   config.filter_run_including focus: true
 end
