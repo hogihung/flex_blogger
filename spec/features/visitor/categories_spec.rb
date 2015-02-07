@@ -21,4 +21,3 @@ feature "Visitors should not be able to access category resource." do
     expect(page).to have_content "Not Authorized"
   end
 end
-
