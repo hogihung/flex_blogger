@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:edit, :update, :destroy]
-#  before_action :authorize
+  before_action :check_user
 
   respond_to :html
 

@@ -6,8 +6,8 @@ gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'carrierwave'  # File Uploads
 gem 'ckeditor'     # WYSIWYG
-gem 'clearance'
-gem 'dotenv-rails'
+gem 'clearance'    # User authentication
+gem 'dotenv-rails' # Environment handling
 gem 'friendly_id'
 gem 'fog'          # Amazon S3
 gem 'haml'
@@ -41,6 +41,11 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', ">=3.0.2"
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'faker'
+  gem 'shoulda-matchers'
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'guard'        # Automatically run tests
@@ -48,14 +53,5 @@ group :development, :test do
 
   gem 'spring-commands-rspec'
   gem 'simplecov'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'poltergeist'
-  #gem 'factory_girl_rails', '~> 4.0'
-  gem 'database_cleaner'
-  gem 'faker'
-  gem 'shoulda-matchers'
 end
 
