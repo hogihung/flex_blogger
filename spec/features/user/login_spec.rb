@@ -12,7 +12,6 @@ feature "User logs into site" do
 
 	scenario "user logs out" do
 		sign_in(user)
-
 		sign_out
 
 		expect(page).to have_link "Sign In"
