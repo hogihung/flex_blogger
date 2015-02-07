@@ -2,9 +2,11 @@ require "rails_helper"
 
 feature "Managing Posts" do
 
+  given(:user) { create :user }
   given(:post) { create :post }
 
   scenario "Create a new post" do
+    sign_in(user)
     visit new_post_path
 
     fill_in "post_title", with: "Title"
@@ -16,6 +18,7 @@ feature "Managing Posts" do
   end
 
   scenario "Edit a post" do
+    sign_in(user)
     visit edit_post_path(post)
 
     fill_in "post_body", with: "Bodies"
@@ -26,6 +29,8 @@ feature "Managing Posts" do
 
   scenario "Delete a post" do
     create(:post)
+
+    sign_in(user)
     visit posts_path
 
     click_link "Delete"
