@@ -1,6 +1,9 @@
 require "rails_helper"
 
 feature "Managing Posts" do
+
+  given(:post) { create :post }
+
   scenario "Create a new post" do
     visit new_post_path
 
@@ -13,8 +16,7 @@ feature "Managing Posts" do
   end
 
   scenario "Edit a post" do
-    @post = FactoryGirl.create(:post)
-    visit edit_post_path(@post)
+    visit edit_post_path(post)
 
     fill_in "post_body", with: "Bodies"
     click_button "Update Post"
@@ -23,7 +25,7 @@ feature "Managing Posts" do
   end
 
   scenario "Delete a post" do
-    @post = FactoryGirl.create(:post)
+    create(:post)
     visit posts_path
 
     click_link "Delete"
