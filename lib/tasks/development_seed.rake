@@ -5,7 +5,7 @@ unless Rails.env.production?
   namespace :dev do
     desc "Seed development database, maintain consistency"
     task prime: "db:setup" do
-      FactoryGirl.find_definitions unless Rails.env.test?
+#      FactoryGirl.find_definitions unless Rails.env.test?
       include FactoryGirl::Syntax::Methods
 
       ## Create Users

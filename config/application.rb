@@ -22,7 +22,7 @@ module FlexBlogger
 
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework :rspec, fixture: false
+      g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.controller_specs false
       g.view_specs false
