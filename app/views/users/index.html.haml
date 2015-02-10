@@ -1,0 +1,22 @@
+%h1 Listing Users
+
+%table.tables
+  %thead
+    %tr
+      %th Email
+      %th Admin?
+      %th
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.admin
+        %td= link_to "Edit", edit_user_path(user)
+        %td= link_to "Delete", user, :method => :delete, :data => { :confirm => "Are you sure?" }
+= will_paginate @users
+
+%br
+
+= link_to "New User", new_user_path

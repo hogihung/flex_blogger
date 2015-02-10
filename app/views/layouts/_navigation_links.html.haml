@@ -12,7 +12,8 @@
         %a{:href => posts_path} Blogs Entries
       %li
         %a{:href => categories_path} Categories
-      %li
-        %a{:href => "#"} Contributors
+      - if current_user.admin?
+        %li
+          %a{:href => users_path} Contributors
       %li
         %a{:href => log_out_path} Sign Out

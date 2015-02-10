@@ -14,6 +14,6 @@ feature "User logs into site" do
 		sign_in(user)
 		sign_out
 
-		expect(page).to have_link "Sign In"
+		expect(page).to_not have_link "Admin"
 	end
 end
