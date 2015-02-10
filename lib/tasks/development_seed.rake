@@ -10,8 +10,8 @@ unless Rails.env.production?
 
       ## Create Users
       create(:user)
-      create(:collab_user_one)
-      create(:collab_user_two)
+      create(:contributor_one)
+      create(:contributor_two)
 
       ## Create Categories
       create(:programming)

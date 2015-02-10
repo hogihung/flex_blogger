@@ -4,7 +4,7 @@ feature "Managing Categories" do
 
   given(:user)         { create :user }
   given(:category)     { create :category }
-  given(:collaborator) { create :collab_user_one }
+  given(:contrib_one)  { create :contributor_one }
 
   scenario "Visit Category page" do
     sign_in(user)
@@ -46,7 +46,7 @@ feature "Managing Categories" do
   end
 
   scenario "Collaborator not able to delete a category" do
-    sign_in(collaborator)
+    sign_in(contrib_one)
     create(:category)
 
     visit categories_path
