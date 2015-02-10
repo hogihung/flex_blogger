@@ -38,18 +38,17 @@ feature "Managing user resource" do
     expect(page).to have_content "Not Authorized"
   end
 
-#  scenario "A non-admin should not be able to edit a user admin resource directly." do
-#    user
-#    sign_in(contrib_two)
-#
-#    visit "/users/1/edit"
-#
-#    expect(page).to have_content "Not Authorized"
-#  end
+  # scenario "A non-admin should not be able to edit a user admin resource directly." do
+  #   user
+  #   sign_in(contrib_two)
+
+  #   visit "/users/1/edit"
+
+  #   expect(page).to have_content "Not Authorized"
+  # end
 
   scenario "A visitor should not be able to access user admin resource directly. " do
     visit "/users"
     expect(page).to have_content "Not Authorized"
   end
 end
-

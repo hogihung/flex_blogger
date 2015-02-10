@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :check_user
-  before_action :is_admin?
+  before_action :admin?
 
   respond_to :html
 
-	def index
+  def index
     @users = User.paginate(page: params[:user], per_page: 10)
     respond_with @users
-	end
+  end
 end

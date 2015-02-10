@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: "Not Authorized" if current_user.nil?
   end
 
-  def is_admin?
+  def admin?
     redirect_to root_path, alert: "Not Authorized" unless current_user.admin
   end
 end
