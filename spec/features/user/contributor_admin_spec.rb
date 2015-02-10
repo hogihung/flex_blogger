@@ -10,15 +10,20 @@ feature "Managing user resource" do
     contrib_one
     contrib_two
 
-    sign_in(user)
-    visit root_path
-    click_link "Admin"
-    click_link "Contributors"
+    manage_contributor
 
     expect(page).to have_content "Listing Users"
     expect(page).to have_content "user@example.com"
     expect(page).to have_content "jack@example.com"
     expect(page).to have_content "jill@example.com"
+  end
+
+  scenario "Admin can add a contributor" do
+    manage_contributor
+
+    click_link "New"
+
+    expect(page).to have_content "New Contributor"
   end
 
   scenario "A non-admin should not be able to access user admin resource." do
@@ -50,5 +55,13 @@ feature "Managing user resource" do
   scenario "A visitor should not be able to access user admin resource directly. " do
     visit "/users"
     expect(page).to have_content "Not Authorized"
+  end
+
+
+  def manage_contributor
+    sign_in(user)
+    visit root_path
+    click_link "Admin"
+    click_link "Contributors"
   end
 end
