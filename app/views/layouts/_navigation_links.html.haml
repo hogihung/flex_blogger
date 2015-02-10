@@ -4,9 +4,6 @@
   %a{href: about_index_path } About Us
 %li.nav-link
   %a{href: contact_index_path } Contact
-- if !signed_in?
-  %li.nav-link
-    %a{href: sign_in_path } Sign In
 - if signed_in?
   %li.nav-link.more
     %a{:href => "#"} Admin
