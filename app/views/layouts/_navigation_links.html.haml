@@ -4,9 +4,6 @@
   %a{href: about_index_path } About Us
 %li.nav-link
   %a{href: contact_index_path } Contact
-- if !signed_in?
-  %li.nav-link
-    %a{href: sign_in_path } Sign In
 - if signed_in?
   %li.nav-link.more
     %a{:href => "#"} Admin
@@ -15,7 +12,8 @@
         %a{:href => posts_path} Blogs Entries
       %li
         %a{:href => categories_path} Categories
-      %li
-        %a{:href => "#"} Contributors
+      - if current_user.admin?
+        %li
+          %a{:href => users_path} Contributors
       %li
         %a{:href => log_out_path} Sign Out

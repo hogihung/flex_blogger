@@ -2,8 +2,9 @@ require "rails_helper"
 
 feature "Managing Categories" do
 
-  given(:user)     { create :user }
-  given(:category) { create :category }
+  given(:user)         { create :user }
+  given(:category)     { create :category }
+  given(:contrib_one)  { create :contributor_one }
 
   scenario "Visit Category page" do
     sign_in(user)
@@ -42,5 +43,14 @@ feature "Managing Categories" do
     click_link "Delete"
 
     expect(page).to have_content "Successfully deleted"
+  end
+
+  scenario "Collaborator not able to delete a category" do
+    sign_in(contrib_one)
+    create(:category)
+
+    visit categories_path
+
+    expect(page).to_not have_link "Delete"
   end
 end
