@@ -22,8 +22,12 @@ feature "Managing user resource" do
     manage_contributor
 
     click_link "New"
+    fill_in "Email", with: "bobo@example.com"
+    fill_in "Password", with: "mysillyPasswd"
+    click_button "Sign up"
 
-    expect(page).to have_content "New Contributor"
+    expect(page).to have_content "Contributor created successfully."
+    expect(page).to have_content "bobo@example.com"
   end
 
   scenario "A non-admin should not be able to access user admin resource." do
