@@ -58,6 +58,16 @@ feature "Managing user resource" do
     sign_in_user_with_password_changed
   end
 
+  scenario "Users that are admin true should not display delete link", focus: true do
+    contrib_one
+    contrib_two
+
+    manage_contributor
+
+    expect(page).to have_xpath("//tr[contains(.,'jack')][contains(.,'Delete')]")
+    expect(page).to_not have_xpath("//tr[contains(.,'user')][contains(.,'Delete')]")
+  end
+
   scenario "A non-admin should not be able to access user admin resource." do
     sign_in(contrib_one)
 
