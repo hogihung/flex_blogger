@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_user
   before_action :admin?
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   respond_to :html
 
@@ -26,6 +26,11 @@ class UsersController < ApplicationController
   def update
     flash[:success] = "Update successfull!" if @user.update(user_params)
     redirect_to users_path
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to users_path, alert: "Contributor removed successfully."
   end
 
 

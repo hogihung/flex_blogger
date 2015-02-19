@@ -14,7 +14,10 @@
         %td= user.email
         %td= user.admin
         %td= link_to "Edit", edit_user_path(user)
-        %td= link_to "Delete", user, :method => :delete, :data => { :confirm => "Are you sure?" }
+        - if user.admin?
+          %td 
+        - else
+          %td= link_to "Delete", user, :method => :delete, :data => { :confirm => "Are you sure?" }
 = will_paginate @users
 
 %br
