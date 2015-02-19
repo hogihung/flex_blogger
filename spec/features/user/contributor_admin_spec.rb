@@ -30,6 +30,19 @@ feature "Managing user resource" do
     expect(page).to have_content "bobo@example.com"
   end
 
+  scenario "Admin can edit a contributor and make them an admin." do
+    contrib_one
+
+    manage_contributor
+
+    find(:xpath, "//tr[contains(.,'jack')]/td/a", :text => 'Edit').click
+    check("Admin")
+    click_button "Update User"
+
+    expect(page).to have_content "Update successfull!"
+    expect(page).to have_xpath("//tr[contains(.,'jack')][contains(.,'true')]")
+  end
+
   scenario "A non-admin should not be able to access user admin resource." do
     sign_in(contrib_one)
 
