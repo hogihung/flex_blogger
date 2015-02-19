@@ -22,8 +22,40 @@ feature "Managing user resource" do
     manage_contributor
 
     click_link "New"
+    fill_in "Email", with: "bobo@example.com"
+    fill_in "Password", with: "mysillyPasswd"
+    click_button "Sign up"
 
-    expect(page).to have_content "New Contributor"
+    expect(page).to have_content "Contributor created successfully."
+    expect(page).to have_content "bobo@example.com"
+  end
+
+  scenario "Admin can edit a contributor and make them an admin." do
+    contrib_one
+
+    manage_contributor
+
+    find(:xpath, "//tr[contains(.,'jack')]/td/a", :text => "Edit").click
+    check("Admin")
+    click_button "Update User"
+
+    expect(page).to have_content "Update successfull!"
+    expect(page).to have_xpath("//tr[contains(.,'jack')][contains(.,'true')]")
+  end
+
+  scenario "Admin can change the password for another user." do
+    contrib_one
+
+    manage_contributor
+
+    find(:xpath, "//tr[contains(.,'jack')]/td/a", :text => "Edit").click
+    fill_in "Password", with: "nopwdReqd"
+    click_button "Update User"
+
+    expect(page).to have_content "Update successfull!"
+
+    sign_out
+    sign_in_user_with_password_changed
   end
 
   scenario "A non-admin should not be able to access user admin resource." do
@@ -43,14 +75,14 @@ feature "Managing user resource" do
     expect(page).to have_content "Not Authorized"
   end
 
-  # scenario "A non-admin should not be able to edit a user admin resource directly." do
-  #   user
-  #   sign_in(contrib_two)
+   scenario "A non-admin should not be able to edit a user admin resource directly." do
+     user
+     sign_in(contrib_two)
 
-  #   visit "/users/1/edit"
+     visit "/users/1/edit"
 
-  #   expect(page).to have_content "Not Authorized"
-  # end
+     expect(page).to have_content "Not Authorized"
+   end
 
   scenario "A visitor should not be able to access user admin resource directly. " do
     visit "/users"
@@ -64,4 +96,14 @@ feature "Managing user resource" do
     click_link "Admin"
     click_link "Contributors"
   end
+
+  def sign_in_user_with_password_changed
+    visit sign_in_path
+    fill_in "session_email", with: "jack@example.com"
+    fill_in "session_password", with: "nopwdReqd"
+    click_button "Sign in"
+
+    expect(page).to have_link "Admin"
+  end
+
 end
