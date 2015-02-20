@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :title
+    = f.input :category, collection: Category.pluck(:description), prompt: "Select a category"
     = f.input :status, collection: Post::STATUS_CHOICES, prompt: "Select status"
     = f.input :body, as: :ckeditor
   .form-actions
