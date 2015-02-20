@@ -1,16 +1,22 @@
 require "rails_helper"
-
+#...
 feature "Managing Posts" do
 
   given(:user) { create :user }
   given(:post) { create :post }
+  given(:category_ruby) { create :ruby }
+  given(:category_javascript) { create :javascript }
 
   scenario "Create a new post" do
+    category_ruby
+    category_javascript
+
     sign_in(user)
     visit new_post_path
 
     fill_in "post_title", with: "Title"
     fill_in "post_body",  with: "Body"
+    select "Ruby", from: "post_category"
     select "draft", from: "post_status"
     click_button "Create Post"
 
