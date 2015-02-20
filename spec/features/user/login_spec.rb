@@ -7,13 +7,13 @@ require "rails_helper"
 		scenario "user logs in" do
 			sign_in(user)
 
-			expect(page).to have_link "Admin"
+			expect(page).to have_link "Manage"
 		end
 
 		scenario "user logs out" do
 			sign_in(user)
 			sign_out
 
-			expect(page).to_not have_link "Admin"
+			expect(page).to_not have_link "Manage"
 		end
 end

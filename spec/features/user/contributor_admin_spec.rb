@@ -81,7 +81,7 @@ feature "Managing user resource" do
     sign_in(contrib_one)
 
     visit root_path
-    click_link "Admin"
+    click_link "Manage"
 
     expect(page).to_not have_link "Contributors"
   end
@@ -112,7 +112,7 @@ feature "Managing user resource" do
   def manage_contributor
     sign_in(user)
     visit root_path
-    click_link "Admin"
+    click_link "Manage"
     click_link "Contributors"
   end
 
@@ -122,7 +122,7 @@ feature "Managing user resource" do
     fill_in "session_password", with: "nopwdReqd"
     click_button "Sign in"
 
-    expect(page).to have_link "Admin"
+    expect(page).to have_link "Manage"
   end
 
 end

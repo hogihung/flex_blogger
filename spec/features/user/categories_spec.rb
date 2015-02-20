@@ -9,7 +9,7 @@ feature "Managing Categories" do
   scenario "Visit Category page" do
     sign_in(user)
 
-    click_link "Admin"
+    click_link "Manage"
     click_link "Categories"
 
     expect(page).to have_content "Listing categories"
