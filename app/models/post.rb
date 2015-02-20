@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
   validates :body, presence: true
   validates :slug, presence: true
 
+  validates :category, presence: true
   validates :status, presence: true, inclusion: { in: :acceptable_status }
 
   scope :recent, -> { order(created_at: :desc).first(3) }
