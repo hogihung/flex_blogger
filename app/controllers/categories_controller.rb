@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:edit, :update, :destroy]
   before_action :check_user
+  before_action :admin?, except: [:index]
 
   respond_to :html
 
