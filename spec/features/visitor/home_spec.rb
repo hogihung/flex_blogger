@@ -4,7 +4,7 @@ feature "Viewing Home Page" do
   scenario "a visitor visits the home page (root url)" do
     visit root_path
 
-    expect(page).to have_content "My Cool Blog Name Here"
+    expect(page).to have_content "Your Awesome Blog Name Goes Here"
   end
 
   scenario "a visitor should not see admin menu" do

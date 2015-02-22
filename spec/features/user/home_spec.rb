@@ -6,6 +6,6 @@ feature "Viewing Home Page" do
 
     click_link "Blog"
 
-    expect(page).to have_content "My Cool Blog Name Here"
+    expect(page).to have_content "Your Awesome Blog Name Goes Here"
   end
 end

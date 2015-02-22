@@ -2,11 +2,26 @@
 %html
   %head
     %title FlexBlogger
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
     %header
       = render "layouts/nav_bar"
       = render "layouts/flashes"
+
+  .hero
+    .hero-inner
+      .hero-copy
+        %h1 Your Awesome Blog Name Goes Here
+        %p Put your sub-title or tag line here.
+
+  %br/
+  %p
+  %section.wrapper
+    %article.primary
       = yield
+    %aside.secondary
+      %h4 Sidebar
+  %p
+  %br/
