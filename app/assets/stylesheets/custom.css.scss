@@ -72,6 +72,12 @@ section {
   @include span-columns(12);
 }
 
+.wrapper {
+  @include outer-container;
+  .primary { @include span-columns(9); }
+  .secondary { @include span-columns(3); }
+}
+
 #category-form {
   @include span-columns(6);
 }

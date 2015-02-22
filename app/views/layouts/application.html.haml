@@ -16,8 +16,12 @@
         %h1 Your Awesome Blog Name Goes Here
         %p Put your sub-title or tag line here.
 
-  .outer-container
-    .span-columns(9)
+  %br/
+  %p
+  %section.wrapper
+    %article.primary
       = yield
-    .span-columns(3)
-      %h4 SIDEBAR
+    %aside.secondary
+      %h4 Sidebar
+  %p
+  %br/
