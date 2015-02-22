@@ -9,10 +9,8 @@ feature "Managing Categories," do
 
   scenario "An Admin visits Category page" do
     category_ruby
-    sign_in(user)
 
-    click_link "Manage"
-    click_link "Categories"
+    manage_category(user)
 
     expect(page).to have_content "Listing categories"
     expect(page).to have_content "Ruby"
@@ -20,20 +18,16 @@ feature "Managing Categories," do
 
   scenario "A Contributor visits Category page" do
     category_ruby
-    sign_in(contrib_one)
 
-    click_link "Manage"
-    click_link "Categories"
+    manage_category(contrib_one)
 
     expect(page).to have_content "Listing categories"
     expect(page).to have_content "Ruby"
   end
 
   scenario "An Admin creates a new category via manage menu" do
-    sign_in(user)
+    manage_category(user)
 
-    click_link "Manage"
-    click_link "Categories"
     click_link "New Category"
     fill_in "category_description", with: "Politics"
     click_button "Create Category"
@@ -42,10 +36,9 @@ feature "Managing Categories," do
   end
 
   scenario "A Contributor should not see New Category link" do
-    sign_in(contrib_one)
+    category
 
-    click_link "Manage"
-    click_link "Categories"
+    manage_category(contrib_one)
 
     expect(page).to_not have_link "New Category"
   end
@@ -70,10 +63,8 @@ feature "Managing Categories," do
 
   scenario "An Admin edits a category via manage menu" do
     category
-    sign_in(user)
+    manage_category(user)
 
-    click_link "Manage"
-    click_link "Categories"
     click_link "Edit"
     fill_in "category_description", with: "Religion and Politics"
     click_button "Update Category"
@@ -83,10 +74,8 @@ feature "Managing Categories," do
 
   scenario "A Contributor should not see edit link for categories" do
     category
-    sign_in(contrib_one)
 
-    click_link "Manage"
-    click_link "Categories"
+    manage_category(contrib_one)
 
     expect(page).to_not have_link "Edit"
   end
@@ -110,8 +99,8 @@ feature "Managing Categories," do
   end
 
   scenario "An Admin deletes a category" do
+    category
     sign_in(user)
-    create(:category)
 
     visit categories_path
     click_link "Delete"
@@ -120,11 +109,18 @@ feature "Managing Categories," do
   end
 
   scenario "Collaborator not able to delete a category" do
+    category
     sign_in(contrib_one)
-    create(:category)
 
     visit categories_path
 
     expect(page).to_not have_link "Delete"
+  end
+
+  def manage_category(login)
+    login_type = login
+    sign_in(login_type)
+    click_link "Manage"
+    click_link "Categories"
   end
 end
