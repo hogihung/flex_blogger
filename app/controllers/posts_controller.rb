@@ -17,7 +17,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.friendly.find(params[:id])
     set_post_redirect
-    respond_with @post
   end
 
   def edit
