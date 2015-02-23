@@ -48,39 +48,3 @@ Edit the config/initializers/clearance.rb file and update the following with you
   config.mailer_sender = "reply@example.com"
 ```
 
-##Database Tables:
-```
-Categories
-  id
-  description (40)
-  created_by (current_user)
-  create_date
-  update_date
-
-Posts
-  id
-  title (120)
-  body
-  category.id
-  user.id
-  status
-  create_date
-  update_date
-
-Users
-   id
-   name
-   email
-   password
-```
-<br>
-**Static Pages**
--  About
--  Contact
-
-**Future Features**
-* Tags
-* Contributors
-* Add Footer (DL)
-* Fix Failing Category test (DL)
-* Add Test for User Sign In/Out (DL)
