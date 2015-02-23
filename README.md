@@ -12,6 +12,12 @@
 * Templating Language: Haml
 
 ##Getting Started
+Clone the application:
+```
+clone https://github.com/hogihung/flex_blogger.git
+cd flex_blogger
+```
+
 
 Create a file in your `config` folder named `app_environment_variables.rb` and add the following:
 ```
@@ -20,6 +26,13 @@ ENV['AWS_ACCESS_KEY_ID']     = 'bar'
 ENV['AWS_SECRET_ACCESS_KEY'] = 'baz'
 ```
 This will allow you to upload images to Amazon S3 through the WYSIWYG editor.
+
+
+Prepare your database:
+```
+rake db:create
+rake db:migrate
+```
 
 ## Prime Development Data
 To ensure we have consistent data when we are testing, use the following command to reset your dev database:
