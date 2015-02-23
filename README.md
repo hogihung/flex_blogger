@@ -71,5 +71,3 @@ Users
 * Add Footer (DL)
 * Fix Failing Category test (DL)
 * Add Test for User Sign In/Out (DL)
-* Add Categories to Posts (Josh)
-* Add controller test for post redirect (Josh)
