@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe PostsController, type: :controller do
 
@@ -6,8 +6,8 @@ RSpec.describe PostsController, type: :controller do
 
     before :each do
       @post = FactoryGirl.create(:post)
-      @old_slug = @post.slug 
-      @post.update(title: 'Darkhorse post')
+      @old_slug = @post.slug
+      @post.update(title: "Darkhorse post")
       @new_slug = @post.slug
     end
 
