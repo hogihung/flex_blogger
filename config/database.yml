@@ -1,55 +1,16 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: flex-dev
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: flex-test
 
 production:
   <<: *default
-  database: db/production.sqlite3
-
-
-############# FUTURE USE WHEN WE USE POSTGRES ###########
-# This file defines our database connectivity for the given environments.
-# default: &default
-#   adapter: postgresql
-#   encoding: utf8
-#   pool: 10
-#   timeout: 5000
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-# test:
-#   <<: *default
-#   database: <%= ENV["DB_TEST"] %>
-#   username: <%= ENV["DB_USERNAME_TEST"] %>
-#   password: <%= ENV["DB_PASSWORD_TEST"] %>
-
-# development:
-#   <<: *default
-#   database: <%= ENV["DB_DEV"] %>
-#   username: <%= ENV["DB_USERNAME_DEV"] %>
-#   password: <%= ENV["DB_PASSWORD_DEV"] %>
-
-# production:
-#   <<: *default
-#   database: <%= ENV["DB_PROD"] %>
-#   username: <%= ENV["DB_USERNAME_PROD"] %>
-#   password: <%= ENV["DB_PASSWORD_PROD"] %>
+  database: flex-production
