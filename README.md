@@ -30,6 +30,9 @@ This will allow you to upload images to Amazon S3 through the WYSIWYG editor.
 
 Prepare your database:
 ```
+The first rake below is optional - may be needed if you are updating from SQLite version:
+rake db:drop  (Use with caution, and only use if needed!!!)
+
 rake db:create
 rake db:migrate
 ```
