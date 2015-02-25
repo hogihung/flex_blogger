@@ -7,9 +7,11 @@
 * Database:  Postgres
 * Test suite:  RSpec
 * Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
-* Authentication: Devise
+* Authentication: Clearance
 * Form Generator: Simple Form
 * Templating Language: Haml
+
+*See the Gemfile for more information*
 
 ##Getting Started
 Clone the application:
