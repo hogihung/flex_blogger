@@ -21,6 +21,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate'
+gem 'pg_search'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 2.0'
