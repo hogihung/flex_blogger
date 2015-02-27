@@ -16,4 +16,4 @@
         %li
           %a{:href => users_path} Contributors
       %li
-        %a{:href => log_out_path} Sign Out
+        = link_to "Sign Out", sign_out_path, { method: :delete }

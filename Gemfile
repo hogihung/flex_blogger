@@ -54,5 +54,6 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'simplecov'
   gem 'launchy'
+  gem 'formulaic'
 end
 
