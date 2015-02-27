@@ -176,6 +176,10 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    formulaic (0.2.0)
+      activesupport
+      capybara
+      i18n
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     guard (2.11.1)
@@ -386,6 +390,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   faker
   fog
+  formulaic
   friendly_id
   guard
   guard-rspec

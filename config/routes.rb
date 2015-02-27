@@ -8,7 +8,5 @@ Rails.application.routes.draw do
   resources :about,   only: :index
 
   root to: "home#index"
-
-  # this is a work-around for sign_out no route issue
-  get "log_out", to: "clearance/sessions#destroy"
+  post "search", to: "home#index"
 end

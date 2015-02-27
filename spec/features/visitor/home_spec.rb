@@ -27,4 +27,24 @@ feature "Viewing Home Page" do
     expect(page).to_not have_content "Not Authorized"
     expect(page).to have_content "To be able to login to your remote over ssh"
   end
+
+  scenario "a visitor uses the search feature in the nav bar." do
+    create_sample_posts
+    visit root_path
+
+    fill_in "query", with: "women less"
+    find("#search-query").click
+
+    expect(page).to have_content "A frequent topic that surfaces"
+    expect(page).to_not have_content "To be able to login"
+    expect(page).to_not have_content "Web development, and programming"
+  end
+
+  def create_sample_posts
+    create(:post)
+    create(:ssh)
+    create(:blog)
+    create(:draft)
+    create(:retired)
+  end
 end
