@@ -15,7 +15,15 @@ class ApplicationController < ActionController::Base
   end
 
   def side_bar_posts
-    @sidebar_posts = Post.last_ten.drop(3)
+    if home_page?
+      @sidebar_posts = Post.last_ten.drop(3)
+    else
+      @sidebar_posts = Post.last_ten.take(7)
+    end
   end
 
+  private
+  def home_page?
+    params[:controller] == 'home' && params[:action] == 'index'
+  end
 end
