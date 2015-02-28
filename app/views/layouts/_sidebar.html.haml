@@ -1,0 +1,4 @@
+- if @sidebar_posts
+  - @sidebar_posts.each do |sidebar_post|
+    = link_to sidebar_post.title, sidebar_post
+    %hr 
