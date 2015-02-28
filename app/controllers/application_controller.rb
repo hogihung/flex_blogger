@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def home_page?
-    params[:controller] == 'home' && params[:action] == 'index'
+    params[:controller] == "home" && params[:action] == "index"
   end
 end
