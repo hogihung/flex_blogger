@@ -28,6 +28,14 @@ unless Rails.env.production?
       create(:ssh)
       create(:draft)
       create(:retired)
+      create(:not_ruby)
+      create(:deploy_error)
+      create(:test_suite)
+      create(:gathering)
+      create(:postgres_remote)
+      create(:ssh_access)
+      create(:chruby)
+      create(:tapas)
     end
   end
 end

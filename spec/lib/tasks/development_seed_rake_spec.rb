@@ -26,9 +26,9 @@ describe "dev namespace rake task", type: :rake do
       expect(Category.count).to eq 8
     end
 
-    it "should create four Blog Posts" do
+    it "should create twelve Blog Posts" do
       run_rake_task
-      expect(Post.count).to eq 4
+      expect(Post.count).to eq 12
     end
 
   end
