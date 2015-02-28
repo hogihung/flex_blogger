@@ -40,11 +40,33 @@ feature "Viewing Home Page" do
     expect(page).to_not have_content "Web development, and programming"
   end
 
+  scenario "a visitor sees previous post links in sidebar." do
+    create_all_posts
+    visit root_path
+
+    expect(page).to have_content "Why are women paid less"
+    expect(page).to_not have_content "Aint Your Ruby"
+    expect(page).to have_content "Enable Remote Access "
+    expect(page).to have_content "Borrowing From Ruby Tapas "
+  end
+
   def create_sample_posts
     create(:post)
     create(:ssh)
     create(:blog)
     create(:draft)
     create(:retired)
+  end
+
+  def create_all_posts
+    create_sample_posts
+    create(:not_ruby)
+    create(:deploy_error)
+    create(:test_suite)
+    create(:gathering)
+    create(:postgres_remote)
+    create(:ssh_access)
+    create(:chruby)
+    create(:tapas)
   end
 end
