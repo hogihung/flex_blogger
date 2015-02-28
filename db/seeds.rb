@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# You can use this file to setup your initial user accounts
 #
-# Examples:
+# Usage: Type the following at a command prompt in your application directory:
+#        rake db:seed
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#        Note: If seeding for production, you may need to use:
+#        rake RAILS_ENV=production db:seed
+#
+User.create(email: "admin_user@example.com", password: "rob0ts84", admin: true)
+User.create(email: "mod_one_user@example.com", password: "mypassw0rd", admin: false)
+User.create(email: "mod_two_user@example.com", password: "mydogsname", admin: false)
+
