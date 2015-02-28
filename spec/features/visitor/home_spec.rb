@@ -50,6 +50,17 @@ feature "Viewing Home Page" do
     expect(page).to have_content "Borrowing From Ruby Tapas "
   end
 
+  scenario "a visitor clicks on flex logo to return to root page." do
+    create_sample_posts
+    visit root_path
+
+    click_link "Why are women paid less"
+    expect(page).to have_content "A frequent topic that surfaces"
+
+    find(".logo").click
+    expect(page).to have_content "How To Install Rails 2.0"
+  end
+
   def create_sample_posts
     create(:post)
     create(:ssh)
