@@ -1,19 +1,19 @@
 %li.nav-link
-  %a{href: root_path } Blog
+  =link_to "Blog", root_path
 %li.nav-link
-  %a{href: about_index_path } About
+  = link_to "About", about_index_path
 %li.nav-link
-  %a{href: contact_index_path } Contact
+  = link_to "Contact", contact_index_path
 - if signed_in?
   %li.nav-link.more
-    %a{:href => "#"} Manage
+    = link_to "Manage", "#"
     %ul.submenu
       %li
-        %a{:href => posts_path} Blogs Entries
+        = link_to "Blog Entries", posts_path
       %li
-        %a{:href => categories_path} Categories
+        = link_to "Categories", categories_path
       - if current_user.admin?
         %li
-          %a{:href => users_path} Contributors
+          = link_to "Contributors", users_path
       %li
         = link_to "Sign Out", sign_out_path, { method: :delete }

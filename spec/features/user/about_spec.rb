@@ -4,7 +4,7 @@ feature "Viewing About Page" do
   scenario "a visitor clicks on the about link" do
     visit root_path
 
-    click_link "About"
+    find(:css, "#js-navigation-menu > li:nth-child(2) > a").click
 
     expect(page).to have_content "About Me"
     expect(page).to have_content "What is this site all about?"
