@@ -1,9 +1,10 @@
 FactoryGirl.define do
-  factory :post do
+  factory :post, class: Post do
     title  "Blog Post Title Here"
     body   "A simple blog post"
     status "published"
     category "Ruby"
+    user_id { FactoryGirl.create(:user).id }
 
     factory :blog do
       title "The Booming field of Programming"

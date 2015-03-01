@@ -1,5 +1,4 @@
 require "rails_helper"
-#...
 feature "Managing Posts" do
 
   given(:user) { create :user }
@@ -38,7 +37,6 @@ feature "Managing Posts" do
 
     sign_in(user)
     visit posts_path
-
     click_link "Delete"
 
     expect(page).to have_content "Successfully deleted"
