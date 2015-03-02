@@ -4,14 +4,12 @@ FactoryGirl.define do
     body   "A simple blog post"
     status "published"
     category "Ruby"
-    user_id { FactoryGirl.create(:user).id }
 
     factory :blog do
       title "The Booming field of Programming"
       body  "Web development, and programming in general, is a booming field.
              However not enough college bound young adults are choosing to
              persue this awesome field of study."
-      status "published"
       category "Programming"
     end
 
@@ -20,7 +18,6 @@ FactoryGirl.define do
       body   "To be able to login to your remote over ssh, without using
               a password, you will need to have created your private and public
               ssh key pair.  Commonly found as id_dsa and id_dsa.pub."
-      status "published"
       category "DevOPs"
     end
 
@@ -36,7 +33,6 @@ FactoryGirl.define do
       title  "How To Install Rails 2.0"
       body   "Today we are going to review how to install Rails 2.0 with our Ruby 1.87 install."
       status "retired"
-      category "Ruby"
     end
 
   end
