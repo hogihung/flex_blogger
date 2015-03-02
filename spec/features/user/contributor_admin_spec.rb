@@ -13,6 +13,7 @@ feature "Managing user resource" do
     manage_contributor
 
     expect(page).to have_content "Listing Users"
+    #expect(page).to have_content.tap { User.select(:email).map(&:email)}
     expect(page).to have_content "user@example.com"
     expect(page).to have_content "jack@example.com"
     expect(page).to have_content "jill@example.com"
