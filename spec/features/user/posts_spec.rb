@@ -2,7 +2,7 @@ require "rails_helper"
 feature "Managing Posts" do
 
   given(:user) { create :user }
-  given(:post) { create :post }
+  given(:post) { create :post, user_id: user.id }
   given(:category_ruby) { create :ruby }
   given(:category_javascript) { create :javascript }
 
