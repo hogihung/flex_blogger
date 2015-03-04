@@ -12,7 +12,7 @@ feature "Managing Categories," do
 
     manage_category(user)
 
-    expect(page).to have_content "Listing categories"
+    expect(page).to have_content "Manage Categories"
     expect(page).to have_content "Ruby"
   end
 
@@ -21,7 +21,7 @@ feature "Managing Categories," do
 
     manage_category(contrib_one)
 
-    expect(page).to have_content "Listing categories"
+    expect(page).to have_content "Manage Categories"
     expect(page).to have_content "Ruby"
   end
 

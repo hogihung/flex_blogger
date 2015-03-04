@@ -12,7 +12,7 @@ feature "Managing user resource" do
 
     manage_contributor
 
-    expect(page).to have_content "Listing Users"
+    expect(page).to have_content "Manage Users"
     expect(page).to have_content "user@example.com"
     expect(page).to have_content "jack@example.com"
     expect(page).to have_content "jill@example.com"
@@ -56,6 +56,19 @@ feature "Managing user resource" do
 
     sign_out
     sign_in_user_with_password_changed
+  end
+
+  scenario "Admin can change display_name for another user." do
+    contrib_one
+
+    manage_contributor
+
+    find(:xpath, "//tr[contains(.,'jack')]/td/a", text: "Edit").click
+    fill_in "Display name", with: "Mr. Magoo"
+    click_button "Update User"
+
+    expect(page).to have_content "Update successfull!"
+    expect(page).to have_content "Mr. Magoo"
   end
 
   scenario "Admin can delete a contributor." do
