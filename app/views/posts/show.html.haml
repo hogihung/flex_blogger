@@ -1,2 +1,7 @@
-%h1= @post.title
-= @post.body.html_safe
+%section.wrapper
+  %article.primary
+    %h1= @post.title
+    = @post.body.html_safe
+  %article.secondary
+    %h4 Recent Posts
+    = render "layouts/sidebar"
