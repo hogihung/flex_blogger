@@ -5,7 +5,7 @@
     .form-inputs
       = f.input :email
       = f.input :password
-      = f.input :admin
+      = f.input :admin if current_user.admin?
       = f.input :display_name
 
     .form-actions

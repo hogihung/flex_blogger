@@ -25,6 +25,11 @@ feature "Edit user settings," do
     expected_result_on_update
   end
 
+  scenario "A non-admin should not be able to edit themself to become admin" do
+    user_updates_themself
+    expect(page).to_not have_content "Admin"
+  end
+
   def user_updates_themself
     post
     sign_in(contrib_one)
