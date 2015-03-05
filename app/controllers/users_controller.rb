@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_user
-  before_action :admin?
+  before_action :admin_or_self?
   before_action :set_user, only: [:edit, :update, :destroy]
 
   respond_to :html
@@ -24,8 +24,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    flash[:success] = "Update successfull!" if @user.update(user_params)
-    redirect_to users_path
+    flash[:success] = "Update successful!" if @user.update(user_params)
+    if current_user.admin?
+      redirect_to users_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
@@ -44,4 +48,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
+  def admin_or_self?
+    return nil if current_user.admin?
+    return  nil if current_user.id.to_s == params[:id]
+    admin?
+  end
 end

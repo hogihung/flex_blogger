@@ -15,5 +15,8 @@
       - if current_user.admin?
         %li
           = link_to "Contributors", users_path
+      - if current_user
+        %li
+          = link_to "#{current_user.display_name} (Change)", edit_user_path(current_user.id)
       %li
         = link_to "Sign Out", sign_out_path, { method: :delete }
