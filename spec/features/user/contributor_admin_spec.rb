@@ -39,7 +39,7 @@ feature "Managing user resource" do
     check("Admin")
     click_button "Update User"
 
-    expect(page).to have_content "Update successfull!"
+    expect(page).to has_updated_successfully?
     expect(page).to have_xpath("//tr[contains(.,'jack')][contains(.,'true')]")
   end
 
@@ -52,7 +52,7 @@ feature "Managing user resource" do
     fill_in "Password", with: "nopwdReqd"
     click_button "Update User"
 
-    expect(page).to have_content "Update successfull!"
+    expect(page).to has_updated_successfully?
 
     sign_out
     sign_in_user_with_password_changed
@@ -67,8 +67,12 @@ feature "Managing user resource" do
     fill_in "Display name", with: "Mr. Magoo"
     click_button "Update User"
 
-    expect(page).to have_content "Update successfull!"
+    expect(page).to has_updated_successfully?
     expect(page).to have_content "Mr. Magoo"
+  end
+
+  def has_updated_successfully?
+    have_content "Update successful!"
   end
 
   scenario "Admin can delete a contributor." do
@@ -108,10 +112,9 @@ feature "Managing user resource" do
   end
 
    scenario "A non-admin should not be able to edit a user admin resource directly." do
-     user
      sign_in(contrib_two)
 
-     visit "/users/1/edit"
+     visit "/users/#{user.id}/edit"
 
      expect(page).to have_content "Not Authorized"
    end
