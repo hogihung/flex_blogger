@@ -2,9 +2,15 @@ require "rails_helper"
 
 feature "Viewing Home Page" do
   scenario "a visitor visits the home page (root url)" do
+    create_sample_posts
+
     visit root_path
 
     expect(page).to have_content "Your Awesome Blog Name Goes Here"
+
+    expect_to_see_post_listing_for post
+    expect_to_see_post_listing_for blog
+    expect_to_see_post_listing_for ssh
   end
 
   scenario "a visitor should not see admin menu" do
@@ -25,7 +31,6 @@ feature "Viewing Home Page" do
     click_link "Passwordless login with ssh"
 
     expect(page).to_not have_content "Not Authorized"
-    expect(page).to have_content "To be able to login to your remote over ssh"
   end
 
   scenario "a visitor uses the search feature in the nav bar." do
@@ -61,10 +66,12 @@ feature "Viewing Home Page" do
     expect(page).to have_content "How To Install Rails 2.0"
   end
 
+  given(:post) { create :post }
+  given(:ssh) { create :ssh }
+  given(:blog) { create :blog }
+
   def create_sample_posts
-    create(:post)
-    create(:ssh)
-    create(:blog)
+    post; ssh; blog
     create(:draft)
     create(:retired)
   end
@@ -79,5 +86,10 @@ feature "Viewing Home Page" do
     create(:ssh_access)
     create(:chruby)
     create(:tapas)
+  end
+
+  def expect_to_see_post_listing_for(a_post)
+    expect(page).to have_content a_post.title
+    expect(page).to have_content a_post.author.display_name
   end
 end
