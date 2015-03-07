@@ -13,9 +13,9 @@ feature "Managing user resource" do
     manage_contributor
 
     expect(page).to have_content "Manage Users"
-    expect(page).to have_content "user@example.com"
-    expect(page).to have_content "jack@example.com"
-    expect(page).to have_content "jill@example.com"
+    expect(page).to have_content user.email
+    expect(page).to have_content contrib_one.email
+    expect(page).to have_content contrib_two.email
   end
 
   scenario "Admin can add a contributor" do

@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(create_post_params)
     flash[:notice] = "Successfully created the post." if @post.save
     respond_with @post
   end
@@ -57,5 +57,9 @@ class PostsController < ApplicationController
     params.require(:post).permit(
       :body, :title, :status, :slug, :category
     )
+  end
+  
+  def create_post_params
+    post_params.merge(author: current_user)
   end
 end

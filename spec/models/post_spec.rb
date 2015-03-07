@@ -19,6 +19,8 @@ describe Post, "validations" do
   it { should validate_presence_of(:category) }
   it { should validate_presence_of(:status) }
 
+  it { should validate_presence_of(:author) }
+
   it { should validate_inclusion_of(:status).in_array(status_array) }
 
   it { should ensure_length_of(:title).is_at_most(50) }

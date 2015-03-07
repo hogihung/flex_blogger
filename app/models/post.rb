@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+
+  belongs_to :author, class_name: User
+
   default_scope -> { order('created_at DESC') }
 
   extend FriendlyId
@@ -6,6 +9,8 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :title, length: { maximum: 50 }
+
+  validates :author, presence: true
 
   validates :body, presence: true
   validates :slug, presence: true

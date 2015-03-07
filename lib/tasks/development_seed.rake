@@ -9,9 +9,9 @@ unless Rails.env.production?
       include FactoryGirl::Syntax::Methods
 
       ## Create Users
-      create(:user)
-      create(:contributor_one)
-      create(:contributor_two)
+      user = create(:user)
+      contributor_one = create(:contributor_one)
+      contributor_two = create(:contributor_two)
 
       ## Create Categories
       create(:programming)
@@ -24,18 +24,18 @@ unless Rails.env.production?
       create(:generic)
 
       ## Create Blog Posts
-      create(:blog)
-      create(:ssh)
-      create(:draft)
-      create(:retired)
-      create(:not_ruby)
-      create(:deploy_error)
-      create(:test_suite)
-      create(:gathering)
-      create(:postgres_remote)
-      create(:ssh_access)
-      create(:chruby)
-      create(:tapas)
+
+      [:blog, :ssh, :draft, :retired, :not_ruby].each do |post|
+        create(post, author: user)
+      end
+
+      [:deploy_error, :test_suite, :gathering].each do |post|
+        create(post, author: contributor_one)
+      end
+
+      [:postgres_remote, :ssh_access, :chruby, :tapas].each do |post|
+        create(post, author: contributor_one)
+      end
     end
   end
 end

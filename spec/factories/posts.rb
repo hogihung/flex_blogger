@@ -4,6 +4,7 @@ FactoryGirl.define do
     body   "A simple blog post"
     status "published"
     category "Ruby"
+    author { create(:user) }
 
     factory :blog do
       title "The Booming field of Programming"
