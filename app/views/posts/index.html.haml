@@ -4,6 +4,7 @@
   %thead
     %tr
       %th Title
+      %th Author
       %th
       %th
 
@@ -11,6 +12,7 @@
     - @posts.each do |post|
       %tr
         %td= link_to post.title, post
+        %td= post.author.display_name
         %td= link_to "Edit", edit_post_path(post)
         %td= link_to "Delete", post, :method => :delete, :data => { :confirm => "Are you sure?" }
 = will_paginate @posts
