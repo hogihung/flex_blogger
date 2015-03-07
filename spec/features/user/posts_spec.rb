@@ -43,4 +43,18 @@ feature "Managing Posts" do
 
     expect(page).to have_content "Successfully deleted"
   end
+
+  given(:list_of_posts) do
+    create_list(:post,  3)
+  end
+  scenario "View listing of existing Posts" do
+    list_of_posts
+    visit posts_path(as: user)
+    within("table.tables") do
+      list_of_posts.each do |post|
+        expect(page).to have_text post.title
+        expect(page).to have_text post.author.display_name
+      end
+    end
+  end
 end
