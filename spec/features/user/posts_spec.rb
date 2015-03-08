@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Managing Posts" do
   given(:user) { create :user }
-  given(:contributor) { create :contributor_one}
+  given(:contributor) { create :contributor_one }
   given(:post) { create :post }
   given(:category_ruby) { create :ruby }
   given(:category_javascript) { create :javascript }
@@ -92,5 +92,4 @@ feature "Managing Posts" do
     expect(page).to have_text post.author.display_name
     expect(page).to have_text post.last_editor.display_name
   end
-
 end
