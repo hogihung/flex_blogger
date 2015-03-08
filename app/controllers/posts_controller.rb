@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
   def update
     flash[:notice] = "Successfully updated the post." if @post.update(post_params)
+    EditorPost.create(post: @post, editor: current_user)
     respond_with @post
   end
 
@@ -58,7 +59,7 @@ class PostsController < ApplicationController
       :body, :title, :status, :slug, :category
     )
   end
-  
+
   def create_post_params
     post_params.merge(author: current_user)
   end
