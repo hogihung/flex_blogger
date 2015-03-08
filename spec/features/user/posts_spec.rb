@@ -43,7 +43,7 @@ feature "Managing Posts" do
     expect(page).to have_content "Successfully deleted"
   end
 
-  given(:list_of_posts) { create_list :post,  3 }
+  given(:list_of_posts) { create_list :post, 3 }
   scenario "View listing of existing Posts" do
     list_of_posts
     visit posts_path(as: user)
@@ -56,7 +56,7 @@ feature "Managing Posts" do
   end
 
   scenario "Display Lasted Edited display_name" +
-    " for post that have been edited." do 
+    " for post that have been edited." do
     create :editor_post, post: post, editor: user
 
     visit posts_path(as: user)
