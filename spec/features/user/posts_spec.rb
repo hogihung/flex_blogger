@@ -2,6 +2,7 @@ require "rails_helper"
 
 feature "Managing Posts" do
   given(:user) { create :user }
+  given(:contributor) { create :contributor_one }
   given(:post) { create :post }
   given(:category_ruby) { create :ruby }
   given(:category_javascript) { create :javascript }
@@ -64,5 +65,31 @@ feature "Managing Posts" do
     within(".last-edited-by") do
       expect(page).to have_text user.display_name
     end
+  end
+
+  scenario "Admin user updates one of his posts" do
+    create (:post)
+
+    sign_in(user)
+    visit edit_post_path(post)
+    fill_in "Title", with: "My Post Title"
+    click_button "Update Post"
+
+    expect(page).to have_text "Successfully updated"
+    expect(page).to have_text post.author.display_name
+    expect(page).to have_text post.last_editor.display_name
+  end
+
+  scenario "A contributor updates another users post", :focus do
+    create (:post)
+
+    sign_in(contributor)
+    visit edit_post_path(post)
+    fill_in "Title", with: "My Post Title"
+    click_button "Update Post"
+
+    expect(page).to have_text "Successfully updated"
+    expect(page).to have_text post.author.display_name
+    expect(page).to have_text post.last_editor.display_name
   end
 end
