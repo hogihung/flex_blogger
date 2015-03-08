@@ -44,7 +44,7 @@ class Post < ActiveRecord::Base
 
 
   def last_editor
-    editors.order(created_at: :desc).first 
+    editors.order(created_at: :desc).first
   end
 
   private

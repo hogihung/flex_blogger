@@ -34,11 +34,11 @@ feature "Viewing Home Page" do
     expect(page).to have_text ssh.title
     expect(page).to have_text ssh.author.display_name
 
-    editor_post = create(:editor_post, post: post )
+    editor_post = create(:editor_post, post: post)
     expect(page).not_to have_been_edited_per? editor_post
 
     visit post_path(post.id)
-    
+
     expect(page).to have_been_edited_per? editor_post
   end
 

@@ -1,7 +1,6 @@
 require "rails_helper"
-#...
-feature "Managing Posts" do
 
+feature "Managing Posts" do
   given(:user) { create :user }
   given(:post) { create :post }
   given(:category_ruby) { create :ruby }
@@ -44,9 +43,7 @@ feature "Managing Posts" do
     expect(page).to have_content "Successfully deleted"
   end
 
-  given(:list_of_posts) do
-    create_list(:post,  3)
-  end
+  given(:list_of_posts) { create_list :post,  3 }
   scenario "View listing of existing Posts" do
     list_of_posts
     visit posts_path(as: user)
@@ -58,14 +55,14 @@ feature "Managing Posts" do
     end
   end
 
-  scenario "Display Lasted Edited display_name for post that have been edited." do 
+  scenario "Display Lasted Edited display_name" +
+    " for post that have been edited." do 
     create :editor_post, post: post, editor: user
 
     visit posts_path(as: user)
 
-    within(".last-edited-by") do 
+    within(".last-edited-by") do
       expect(page).to have_text user.display_name
     end
   end
-
 end
