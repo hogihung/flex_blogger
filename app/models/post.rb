@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 
   belongs_to :author, class_name: User
+  has_many :editor_posts
+  has_many :editors, through: :editor_posts
 
   default_scope -> { order('created_at DESC') }
 
@@ -40,6 +42,10 @@ class Post < ActiveRecord::Base
     end
   end
 
+
+  def last_editor
+    editors.order(created_at: :desc).first 
+  end
 
   private
 

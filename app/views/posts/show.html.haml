@@ -1,7 +1,15 @@
 %section.wrapper
   %article.primary
     %h1= @post.title
-    = @post.body.html_safe
+    %br
+    %cite
+      Author:
+      %strong= @post.author.display_name
+    %p= @post.body.html_safe
+    - if @post.editors.present?
+      %p
+        Last Edited by:
+        = @post.last_editor.display_name
   %article.secondary
     %h4 Recent Posts
     = render "layouts/sidebar"

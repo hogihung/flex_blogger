@@ -5,7 +5,9 @@
         %h3
           = link_to post.title, post
           %br
-        %strong= post.author.display_name
+        %cite 
+          Author: 
+          %strong= post.author.display_name
         %p= post.body.html_safe
 
         %hr.post-body-hr

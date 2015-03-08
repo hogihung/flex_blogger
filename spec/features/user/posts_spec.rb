@@ -57,4 +57,15 @@ feature "Managing Posts" do
       end
     end
   end
+
+  scenario "Display Lasted Edited display_name for post that have been edited." do 
+    create :editor_post, post: post, editor: user
+
+    visit posts_path(as: user)
+
+    within(".last-edited-by") do 
+      expect(page).to have_text user.display_name
+    end
+  end
+
 end
