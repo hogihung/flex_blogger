@@ -25,4 +25,6 @@ describe Post, "validations" do
 
   it { should ensure_length_of(:title).is_at_most(50) }
 
+  it { should have_many(:editor_posts) }
+  it { should have_many(:editors).through(:editor_posts) }
 end

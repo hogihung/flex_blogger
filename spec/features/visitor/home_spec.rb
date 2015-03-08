@@ -26,11 +26,20 @@ feature "Viewing Home Page" do
   end
 
   scenario "a visitor clicks link for a blog entry to see more" do
-    create(:ssh)
+    post = create(:ssh)
     visit root_path
     click_link "Passwordless login with ssh"
 
     expect(page).to_not have_content "Not Authorized"
+    expect(page).to have_text ssh.title
+    expect(page).to have_text ssh.author.display_name
+
+    editor_post = create(:editor_post, post: post)
+    expect(page).not_to have_been_edited_per? editor_post
+
+    visit post_path(post.id)
+
+    expect(page).to have_been_edited_per? editor_post
   end
 
   scenario "a visitor uses the search feature in the nav bar." do
@@ -91,5 +100,9 @@ feature "Viewing Home Page" do
   def expect_to_see_post_listing_for(a_post)
     expect(page).to have_content a_post.title
     expect(page).to have_content a_post.author.display_name
+  end
+
+  def have_been_edited_per?(editor_post)
+    have_text "Last Edited by: #{editor_post.editor.display_name}"
   end
 end
