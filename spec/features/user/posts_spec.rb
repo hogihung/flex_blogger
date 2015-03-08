@@ -80,7 +80,7 @@ feature "Managing Posts" do
     expect(page).to have_text post.last_editor.display_name
   end
 
-  scenario "A contributor updates another users post", :focus do
+  scenario "A contributor updates another users post" do
     create (:post)
 
     sign_in(contributor)
