@@ -5,9 +5,9 @@
         %h3
           = link_to post.title, post
           %br
-        %cite 
-          Author: 
-          %strong= post.author.display_name
+        %cite
+          Author:
+          %strong= "#{post.author.display_name} on #{post.created_at.strftime("%B %d, %Y")}"
         %p= post.body.html_safe
 
         %hr.post-body-hr
