@@ -4,12 +4,12 @@
     %br
     %cite
       Author:
-      %strong= @post.author.display_name
+      %strong= "#{@post.author.display_name} on #{@post.created_at.strftime("%B %d, %Y")}"
     %p= @post.body.html_safe
     - if @post.editors.present?
       %p
-        Last Edited by:
-        = @post.last_editor.display_name
+        %cite Last Edited by:
+        = "#{@post.last_editor.display_name} on #{@post.updated_at.strftime("%B %d, %Y")}"
   %article.secondary
     %h4 Recent Posts
     = render "layouts/sidebar"

@@ -40,6 +40,7 @@ feature "Viewing Home Page" do
     visit post_path(post.id)
 
     expect(page).to have_been_edited_per? editor_post
+    expect(page).to have_text post.updated_at.strftime("%B %d, %Y")
   end
 
   scenario "a visitor uses the search feature in the nav bar." do
@@ -100,6 +101,7 @@ feature "Viewing Home Page" do
   def expect_to_see_post_listing_for(a_post)
     expect(page).to have_content a_post.title
     expect(page).to have_content a_post.author.display_name
+    expect(page).to have_content a_post.created_at.strftime("%B %d, %Y")
   end
 
   def have_been_edited_per?(editor_post)
