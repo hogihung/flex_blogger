@@ -21,11 +21,11 @@ cd flex_blogger
 ```
 
 
-Create a file in your `config` folder named `app_environment_variables.rb` and add the following:
+Create a file in your `apps root` folder named `.env` and add the following:
 ```
-ENV['S3_BUCKET']             = 'foo'
-ENV['AWS_ACCESS_KEY_ID']     = 'bar'
-ENV['AWS_SECRET_ACCESS_KEY'] = 'baz'
+S3_BUCKET:             'your_s3_bucket_name_here'
+AWS_ACCESS_KEY_ID:     'your_aws_access_key_id_here'
+AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key_here'
 ```
 This will allow you to upload images to Amazon S3 through the WYSIWYG editor.
 
