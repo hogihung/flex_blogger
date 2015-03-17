@@ -1,0 +1,25 @@
+<section class="wrapper">
+  <article class="primary">
+    <% @posts.each do |post| %>
+      <p>
+        <h3>
+          <%= link_to post.title, post %>
+        </h3>
+        <br>
+        <cite>
+          Author:
+          <strong> <%= "#{post.author.display_name} on #{post.created_at.strftime("%B %d, %Y")}" %></strong>
+        </cite>
+        <p>
+          <%= post.body.html_safe %>
+        </p>
+
+        <hr class="post-body-hr">
+      </p>
+    <% end %>
+  </article>
+  <article class="secondary"
+    <h4>Recent Posts</h4>
+    <%= render "layouts/sidebar" %>
+  </article>
+</section>
