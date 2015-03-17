@@ -1,0 +1,8 @@
+<div class="navigation-tools">
+  <div class="search-bar">
+    <%= form_tag("/search") do %>
+      <%= text_field_tag :query, nil, placeholder: "Enter Search", type: "search" %>
+      <%= button_tag type: "submit", id: "search-query" do %>
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png", alt: "Search Icon" >
+      <% end %>
+    <% end %>
