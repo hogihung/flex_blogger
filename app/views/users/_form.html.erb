@@ -1,0 +1,14 @@
+<div id="user-form">
+  <%= simple_form_for(@user) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :admin if current_user.admin? %>
+      <%= f.input :display_name %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
