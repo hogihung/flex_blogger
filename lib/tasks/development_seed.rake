@@ -25,7 +25,7 @@ unless Rails.env.production?
 
       ## Create Blog Posts
 
-      [:blog, :ssh, :draft, :retired, :not_ruby].each do |post|
+      [:blog, :ssh, :women, :retired, :draft].each do |post|
         create(post, author: user)
       end
 

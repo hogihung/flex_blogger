@@ -76,19 +76,28 @@ feature "Viewing Home Page" do
     expect(page).to have_content "How To Install Rails 2.0"
   end
 
+  scenario "a visitor should not see posts with a status of draft" do
+    create_sample_posts
+    create(:draft)
+    visit root_path
+
+    expect(page).to have_text "A frequent topic that surfaces"
+    expect(page).to_not have_text "Aint Your Ruby"
+  end
+
   given(:post) { create :post }
   given(:ssh) { create :ssh }
   given(:blog) { create :blog }
 
   def create_sample_posts
     post; ssh; blog
-    create(:draft)
+    create(:women)
     create(:retired)
   end
 
   def create_all_posts
     create_sample_posts
-    create(:not_ruby)
+    create(:draft)
     create(:deploy_error)
     create(:test_suite)
     create(:gathering)

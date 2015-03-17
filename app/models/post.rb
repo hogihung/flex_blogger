@@ -20,8 +20,8 @@ class Post < ActiveRecord::Base
   validates :category, presence: true
   validates :status, presence: true, inclusion: { in: :acceptable_status }
 
-  scope :recent, -> { order(created_at: :desc).first(3) }
-  scope :last_ten, -> { order(created_at: :desc).first(10) }
+  scope :recent, -> { where("status != ?", 'draft').order(created_at: :desc).first(3) }
+  scope :last_ten, -> { where("status != ?", 'draft').order(created_at: :desc).first(10) }
 
   STATUS_CHOICES = %w(draft published archived retired)
 

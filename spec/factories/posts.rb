@@ -24,11 +24,11 @@ FactoryGirl.define do
       category "DevOPs"
     end
 
-    factory :draft do
+    factory :women do
       title "Why are women paid less then men?"
       body   "A frequent topic that surfaces in our community, is the claim that
               women are paid less than men for the same job."
-      status "draft"
+      status "published"
       category "Social"
     end
 
@@ -39,10 +39,10 @@ FactoryGirl.define do
       category "Ruby"
     end
 
-    factory :not_ruby do
+    factory :draft do
       title "Aint Your Ruby"
       body  "When meeting new people in the programming community, we frequently share what we do in our day jobs.  By day I primarily use Perl, though I have been slowly building up an arsenal of Ruby and Ruby on Rails applications.  But before learning Matz's Ruby, I learned a different flavor of Ruby.  And this 'aint your ruby.'"
-      status "published"
+      status "draft"
       category "Ruby"
       created_at 16.days.ago
     end
