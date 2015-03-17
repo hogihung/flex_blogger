@@ -1,0 +1,31 @@
+<h1>Manage Posts</h1>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Last Editedy By</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td> <%= link_to post.title, post %> </td>
+        <td> <%= post.author.display_name %> </td>
+        <td class="last-edited-by">
+          <% if post.editors.present? %>
+            <%=  post.last_editor.display_name %>
+          <% end %>
+        </td>
+        <td> <%= link_to "Edit", edit_post_path(post) %> </td>
+        <td> <%= link_to "Delete", post, :method => :delete, :data => { :confirm => "Are you sure?" } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @posts %>
+<br>
+<%= link_to "New Post", new_post_path, class: "btn" %>
