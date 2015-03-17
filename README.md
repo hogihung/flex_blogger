@@ -9,7 +9,7 @@
 * Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
 * Authentication: Clearance
 * Form Generator: Simple Form
-* Templating Language: Haml
+* Templating Language: Erb 
 
 *See the Gemfile for more information*
 
