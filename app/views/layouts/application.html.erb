@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>FlexBlogger</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+<body>
+  <header>
+    <%= render "layouts/nav_bar" %>
+    <%= render "layouts/flashes" %>
+
+  <div class=hero>
+    <div class=hero-inner>
+      <div class=hero-copy>
+        <h1>Your Awesome Blog Name Goes Here</h1>
+        <p>Put your sub-title or tag line here.</p>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <br>
+  <p>
+  <%= yield %>
+  </p>
+
+  <p>
+  <br>
+  </p>
+
+</body>
+  <%= render "layouts/footer" %>
+</html>
