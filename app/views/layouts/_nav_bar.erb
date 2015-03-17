@@ -1,0 +1,14 @@
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a class="logo" href="/">
+      <img alt="Logo Image", src=<%= asset_path("flex_icon.png") %>>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul class="navigation-menu" id="js-navigation-menu">
+        <%= render "layouts/navigation_links" %>
+        <%= render "layouts/search_bar" %>
+      </ul>
+    </nav>
+  </div>
+</header>
