@@ -1,0 +1,14 @@
+<div id="category-form">
+  <%= simple_form_for(@category) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :description %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+  <br>
+</div>
