@@ -1,0 +1,22 @@
+<h1>Manage Categories</h1>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td> <%= category.description %> </td>
+        <td> <%= link_to "Edit", edit_category_path(category) if current_user.admin %> </td>
+        <td> <%= link_to "Delete", category, :method => :delete, :data => { :confirm => "Are you sure?" } if current_user.admin %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to "New Category", new_category_path if current_user.admin %>
