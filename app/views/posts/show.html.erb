@@ -1,0 +1,20 @@
+<section class="wrapper">
+  <article class="primary">
+    <h1><%= @post.title %></h1>
+    <br>
+    <cite>
+      Author:
+      <strong><%= "#{@post.author.display_name} on #{@post.created_at.strftime("%B %d, %Y")}" %></strong>
+    </cite>
+    <p>
+      <%= @post.body.html_safe %>
+      <% if @post.editors.present? %>
+        <p>
+        <cite>Last Edited by:
+          <%= "#{@post.last_editor.display_name} on #{@post.updated_at.strftime("%B %d, %Y")}" %>
+        </cite>
+        </p>
+      <% end %>
+  <article class="secondary">
+    <h4>Recent Posts</h4>
+    <%= render "layouts/sidebar" %>
