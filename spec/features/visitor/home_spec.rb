@@ -85,6 +85,17 @@ feature "Viewing Home Page" do
     expect(page).to_not have_text "Aint Your Ruby"
   end
 
+  scenario "a visitor should not see draft posts when they use search", :focus do
+    create_all_posts
+    visit root_path
+
+    fill_in "query", with: "Aint Your Ruby"
+    find("#search-query").click
+
+    expect(page).to have_text "Recent Posts"
+    expect(page).to_not have_text "When meeting new people in the programming community"
+  end
+
   given(:post) { create :post }
   given(:ssh) { create :ssh }
   given(:blog) { create :blog }

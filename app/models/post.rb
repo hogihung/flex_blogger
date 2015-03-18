@@ -11,20 +11,17 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :title, length: { maximum: 50 }
-
   validates :author, presence: true
-
   validates :body, presence: true
   validates :slug, presence: true
-
   validates :category, presence: true
   validates :status, presence: true, inclusion: { in: :acceptable_status }
 
   scope :recent, -> { where("status != ?", 'draft').order(created_at: :desc).first(3) }
   scope :last_ten, -> { where("status != ?", 'draft').order(created_at: :desc).first(10) }
+  scope :published, -> { where("status != ?", 'draft') }
 
   STATUS_CHOICES = %w(draft published archived retired)
-
 
   include PgSearch
   pg_search_scope :search, against: [:title, :body],
@@ -36,12 +33,11 @@ class Post < ActiveRecord::Base
         ts_rank(to_tsvector(title), plainto_tsquery(#{sanitize(query)})) +
         ts_rank(to_tsvector(body), plainto_tsquery(#{sanitize(query)}))
       RANK
-    where("title @@ :q or body @@ :q", q: "%#{query}%").order("#{rank} DESC")
+    where("title @@ :q or body @@ :q and status != 'draft' ", q: "%#{query}%").order("#{rank} DESC").published
     else
       recent
     end
   end
-
 
   def last_editor
     editors.order(created_at: :desc).first
@@ -57,5 +53,4 @@ class Post < ActiveRecord::Base
   def should_generate_new_friendly_id?
     title_changed?
   end
-
 end
