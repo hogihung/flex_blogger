@@ -1,21 +1,26 @@
 <section class="wrapper">
   <article class="primary">
-    <% @posts.each do |post| %>
+    <% if @posts.empty? %>
       <p>
-        <h3>
-          <%= link_to post.title, post %>
-        </h3>
-        <br>
-        <cite>
-          Author:
-          <strong> <%= "#{post.author.display_name} on #{post.created_at.strftime("%B %d, %Y")}" %></strong>
-        </cite>
-        <p>
-          <%= post.body.html_safe %>
-        </p>
-
-        <hr class="post-body-hr">
+        <h4>No Records Found.</h4>
       </p>
+    <% else %>
+      <% @posts.each do |post| %>
+        <p>
+          <h3>
+            <%= link_to post.title, post %>
+          </h3>
+          <br>
+          <cite>
+            Author:
+            <strong> <%= "#{post.author.display_name} on #{post.created_at.strftime("%B %d, %Y")}" %></strong>
+          </cite>
+          <p>
+            <%= post.body.html_safe %>
+          </p>
+          <hr class="post-body-hr">
+        </p>
+      <% end %>
     <% end %>
   </article>
   <article class="secondary"
