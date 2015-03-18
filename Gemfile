@@ -10,8 +10,6 @@ gem 'clearance'    # User authentication
 gem 'dotenv-rails' # Environment handling
 gem 'friendly_id'
 gem 'fog'          # Amazon S3
-gem 'haml'
-gem 'haml-rails'
 gem 'jquery-rails'
 gem 'mini_magick'  # Image Processing
 gem 'neat'
@@ -48,11 +46,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'guard'        # Automatically run tests
-  gem 'guard-rspec'  # Auto-run Rspec tests
-
   gem 'spring-commands-rspec'
   gem 'simplecov'
   gem 'launchy'
 end
-
