@@ -1,15 +1,15 @@
 #Flex Blogger
 
-**Note: This application is currently in the early development stage.  We will be making many changes.  Please keep that in mind if you clone.**
+**Note: This application is ready for early adoption.  There may be a few updates as we discover and fix bugs or modify features.**
 
 * Ruby version: 2.1.5
 * Rails version: 4.1.7
 * Database:  Postgres
 * Test suite:  RSpec
-* Frontend Framework: Bourbon, Neat, Bitters and Refill<br>
+* Frontend CSS Framework: Bourbon, Neat, Bitters and Refill<br>
 * Authentication: Clearance
 * Form Generator: Simple Form
-* Templating Language: Erb 
+* Templating Language: Erb
 
 *See the Gemfile for more information*
 
@@ -52,4 +52,14 @@ Edit the config/initializers/clearance.rb file and update the following with you
 ```
   config.mailer_sender = "reply@example.com"
 ```
+
+## Preparing for Production
+1.  Edit the app/views/about and contact files to supply your static information.
+2.  Edit the db/seeds.rb file, replacing the sample data, with your information.
+3.  Import the users from step 2 by using the following command:
+
+```
+rake RAILS_ENV=production db:seed
+```
+
 
