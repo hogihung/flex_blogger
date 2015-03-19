@@ -59,7 +59,8 @@ Edit the config/initializers/clearance.rb file and update the following with you
 3.  Import the users from step 2 by using the following command:
 
 ```
-rake RAILS_ENV=production db:seed
+rake RAILS_ENV=production db:setup
+rake RAILS_ENV=production db:seed    (*not needed if you use previous command*)
 ```
 
 
