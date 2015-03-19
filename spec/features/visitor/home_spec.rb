@@ -85,7 +85,7 @@ feature "Viewing Home Page" do
     expect(page).to_not have_text "Aint Your Ruby"
   end
 
-  scenario "a visitor should not see draft posts when they use search", :focus do
+  scenario "a visitor should not see draft posts when they use search" do
     create_all_posts
     visit root_path
 
