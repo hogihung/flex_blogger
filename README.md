@@ -54,13 +54,20 @@ Edit the config/initializers/clearance.rb file and update the following with you
 ```
 
 ## Preparing for Production
-1.  Edit the app/views/about and contact files to supply your static information.
+1.  Edit the app/views/about & contact files to supply your static information.
 2.  Edit the db/seeds.rb file, replacing the sample data, with your information.
-3.  Import the users from step 2 by using the following command:
+3.  Setup your production database using the following command:
 
 ```
 rake RAILS_ENV=production db:setup
-rake RAILS_ENV=production db:seed    (*not needed if you use previous command*)
+```
+
+*Optional* - the rake db:setup task will read in your seeds file.  However, if
+you forgot to update, or want to add more users/categories after you have deployed,
+you can use the following to read in the new information in your seeds file:
+
+```
+rake RAILS_ENV=production db:seed
 ```
 
 
