@@ -724,3 +724,16 @@ article.type-system-slab {
   }
 }
 
+.prettyprint {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 95%;
+    line-height: 140%;
+    white-space: pre-wrap;
+    background: #D1DFF2;
+    color: #40526b;
+    border: 1px solid #40526b;
+}
