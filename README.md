@@ -2,8 +2,8 @@
 
 **Note: This application is ready for early adoption.  There may be a few updates as we discover and fix bugs or modify features.**
 
-* Ruby version: 2.1.5
-* Rails version: 4.1.7
+* Ruby version: 2.2.2
+* Rails version: 4.2.4
 * Database:  Postgres
 * Test suite:  RSpec
 * Frontend CSS Framework: Bourbon, Neat, Bitters and Refill<br>
