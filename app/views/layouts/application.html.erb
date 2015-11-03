@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+</head>
+
 <body>
   <header>
     <%= render "layouts/nav_bar" %>
@@ -20,15 +22,10 @@
   <%= render "layouts/flashes" %>
   </header>
 
-  <br>
-  <p>
+  <main>
   <%= yield %>
-  </p>
+  </main>
 
-  <p>
-  <br>
-  </p>
-
-</body>
   <%= render "layouts/footer" %>
+</body>
 </html>
