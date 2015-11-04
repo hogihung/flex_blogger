@@ -16,8 +16,8 @@
   <div class=hero>
     <div class=hero-inner>
       <div class=hero-copy>
-        <h1>Your Awesome Blog Name Goes Here</h1>
-        <p>Put your sub-title or tag line here.</p>
+        <h1><%= "#{Rails.configuration.title}" %></h1>
+        <p><<%= "#{Rails.configuration.sub_title}" %>/p>
       </div>
     </div>
   </div>

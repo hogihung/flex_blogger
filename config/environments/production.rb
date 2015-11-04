@@ -75,4 +75,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configure your websites title and sub-title
+  config.title = "Your Awesome Blog Name Goes Here"
+  config.sub_title = "Put your sub-title or tag line here."
 end

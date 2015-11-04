@@ -38,4 +38,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.middleware.use Clearance::BackDoor
+
+  # Configure your websites title and sub-title
+  config.title = "Your Awesome Blog Name Goes Here [TEST]"
+  config.sub_title = "Put your sub-title or tag line here."
 end
