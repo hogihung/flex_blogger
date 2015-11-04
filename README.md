@@ -13,6 +13,12 @@
 
 *See the Gemfile for more information*
 
+##Before you begin
+If you were to dig in and review some of the earlier commits you can see that originally haml was used as the template language.  As I talked and worked with other newbies I decided to bring things back to the basics.  All of the views that were formatted using haml were converted to erb.  While I do use haml at the day job and on other projects, the goal of FlexBlogr was to create a Rails based blog application that is friendly to the new Ruby on Rails developer.
+
+I'm still fumbling my way through CSS, so please keep that in mind.  But I do think that things are good enough and I'll leave it to you to tinker with FlexBlogr, tune it to meet your needs and have fun with it.
+
+
 ##Getting Started
 Clone the application:
 ```
@@ -89,5 +95,12 @@ you can use the following to read in the new information in your seeds file:
 ```
 rake RAILS_ENV=production db:seed
 ```
+
+## Run the tests
+You can run the test suite, which is RSpec based, by executing the following command:
+
+```
+rspec
+``` 
 
 
