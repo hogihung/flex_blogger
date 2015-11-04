@@ -69,6 +69,10 @@
   }
 
   thead {
+    th.actions {
+      width: 100px;
+    }
+
     th {
       background-color: $table-header-background;
       border-bottom: 0px;
