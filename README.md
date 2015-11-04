@@ -53,6 +53,26 @@ Edit the config/initializers/clearance.rb file and update the following with you
   config.mailer_sender = "reply@example.com"
 ```
 
+## Using your own hero image
+Edit the file located at: app/assests/stylesheets/custom.css.scss
+
+```
+  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+```
+
+## Setup your website title and sub-title
+Edit the file(s): 
+config/environments/production.rb
+config/environments/development.rb (optional)
+
+Adjusting the following settings:
+
+```
+# Configure your websites title and sub-title
+config.title = "Your Awesome Blog Name Goes Here"
+config.sub_title = "Put your sub-title or tag line here."
+```
+
 ## Preparing for Production
 1.  Edit the app/views/about & contact files to supply your static information.
 2.  Edit the db/seeds.rb file, replacing the sample data, with your information.
