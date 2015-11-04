@@ -61,8 +61,8 @@ Edit the file located at: app/assests/stylesheets/custom.css.scss
 ```
 
 ## Setup your website title and sub-title
-Edit the file(s): 
-config/environments/production.rb
+Edit the file(s): <br>
+config/environments/production.rb <br>
 config/environments/development.rb (optional)
 
 Adjusting the following settings:
