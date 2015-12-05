@@ -16,8 +16,7 @@ main {
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  //$hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
-  $hero-image: 'http://localhost:3000/images/City_Skyline_113H.png';
+  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   background-color: #324766;
@@ -738,3 +737,16 @@ article.type-system-slab {
     color: #40526b;
     border: 1px solid #40526b;
 }
+
+.secondary {
+    padding: 1em;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: antiquewhite;
+    background-color: cornsilk;
+
+    hr {
+      margin: 10px;
+    }
+}
+

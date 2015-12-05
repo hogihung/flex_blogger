@@ -79,6 +79,32 @@ config.title = "Your Awesome Blog Name Goes Here"
 config.sub_title = "Put your sub-title or tag line here."
 ```
 
+## Configure the RSS Feed Builder
+Edit the file app/views/home/feed.rss.builder and update these settings:
+
+```
+  xml.title "Your Blog Name Goes Here"
+  xml.author "Your Name Here"
+  xml.description "Some Info To Describe, Can be comman separated, Ruby, Rails"
+  xml.link "http://yourdomain.here"
+
+      xml.author "Your Name Here"
+      xml.link "http://yourdomain.io/" + article.slug
+```
+
+## Run the tests
+You can run the test suite, which is RSpec based, by executing the following command:
+
+```
+rspec
+``` 
+
+## Start Web Server - Development environment
+```
+rails server
+```
+
+
 ## Preparing for Production
 1.  Edit the app/views/about & contact files to supply your static information.
 2.  Edit the db/seeds.rb file, replacing the sample data, with your information.
@@ -96,11 +122,5 @@ you can use the following to read in the new information in your seeds file:
 rake RAILS_ENV=production db:seed
 ```
 
-## Run the tests
-You can run the test suite, which is RSpec based, by executing the following command:
-
-```
-rspec
-``` 
 
 

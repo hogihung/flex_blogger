@@ -5,6 +5,12 @@
   <%= link_to "About", about_index_path %>
 </li>
 <li class="nav-link">
+  <%= link_to "Summary", summary_index_path %>
+</li>
+<li class="nav-link">
+  <a href="/feed?format=rss" rel="alternate" type="application/rss+xml" title="YOUR WEB SITE NAME RSS Feed">RSS</a>
+</li>
+<li class="nav-link">
   <%= link_to "Contact", contact_index_path %>
 </li>
 <% if signed_in? %>
