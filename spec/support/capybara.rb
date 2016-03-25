@@ -46,11 +46,11 @@ else
       {
         timeout: 120,
         debug: false, # change this to true to troubleshoot
-        window_size: [1920, 1040] # this can affect dynamic layout
+        window_size: [1920, 1080] # this can affect dynamic layout
       }
     )
   end
   Capybara.javascript_driver = :poltergeist
-  Capybara.default_driver = :poltergeist
+  Capybara.default_driver = :rack_test
 
 end
