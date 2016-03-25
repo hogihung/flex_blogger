@@ -1,6 +1,8 @@
 require "rails_helper"
 
-feature "Viewing Contact Page" do
+# added :js => true to assist in trouble shooting a failed test (on purpose)
+# remove comments and the , :js => true when done.
+feature "Viewing Contact Page", :js => true do
   scenario "a visitor clicks on contacts link" do
     visit root_path
 
