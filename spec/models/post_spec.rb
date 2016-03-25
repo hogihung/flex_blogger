@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Post, "validations" do
+describe Post, "validations", type: :model do
   let :status_array do
     %w(draft published archived retired)
   end
@@ -23,7 +23,7 @@ describe Post, "validations" do
 
   it { should validate_inclusion_of(:status).in_array(status_array) }
 
-  it { should ensure_length_of(:title).is_at_most(50) }
+  it { should validate_length_of(:title).is_at_most(50) }
 
   it { should have_many(:editor_posts) }
   it { should have_many(:editors).through(:editor_posts) }
