@@ -13,6 +13,15 @@
 
 *See the Gemfile for more information*
 
+##Revisions
+-March 27, 2016-
+Added capybara-screenshot to assist in the development process when we have a failing test.  Since this application was created with the new Rails developer in mind, there are two failing tests.  These failing tests will create a html and png snapshot where the error occurs.
+
+Updated some gems to newer versions which led to some issues with our model tests that are using shoulda-matchers.  Resolved by applying the new type: :model tag.
+
+Configured Capybara to support poltergeist and selenium.
+
+
 ##Before you begin
 If you were to dig in and review some of the earlier commits you can see that originally haml was used as the template language.  As I talked and worked with other newbies I decided to bring things back to the basics.  All of the views that were formatted using haml were converted to erb.  While I do use haml at the day job and on other projects, the goal of FlexBlogr was to create a Rails based blog application that is friendly to the new Ruby on Rails developer.
 
