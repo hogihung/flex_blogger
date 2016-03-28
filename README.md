@@ -21,6 +21,11 @@ Updated some gems to newer versions which led to some issues with our model test
 
 Configured Capybara to support poltergeist and selenium.
 
+Use the following syntax to use Selenium with one of the failing tests:
+```
+SELENIUM=true rspec spec/features/visitor/contacts_spec.rb
+```
+
 
 ##Before you begin
 If you were to dig in and review some of the earlier commits you can see that originally haml was used as the template language.  As I talked and worked with other newbies I decided to bring things back to the basics.  All of the views that were formatted using haml were converted to erb.  While I do use haml at the day job and on other projects, the goal of FlexBlogr was to create a Rails based blog application that is friendly to the new Ruby on Rails developer.

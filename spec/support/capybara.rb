@@ -6,13 +6,10 @@ require 'capybara/poltergeist'
 if ENV['SELENIUM']
   Capybara.default_max_wait_time = 10
   Capybara.default_driver = :selenium
+  Capybara.javascript_driver = :selenium
   Capybara.register_driver :selenium do |app|
     prefs = {
-      'download' => {
-        'default_directory' => DownloadHelpers.path.to_s,
-        'directory_upgrade' => true,
-        'extensions_to_open' => ''
-      }
+      # Add any custom preferences here
     }
     caps = Selenium::WebDriver::Remote::Capabilities.chrome
     caps['chromeOptions'] = {'prefs' => prefs,
